@@ -1,15 +1,11 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import { Typography } from "@material-ui/core"
+import { NextSeo } from "next-seo"
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
+const IndexPage: React.FC = () => (
+	<>
+		<NextSeo titleTemplate="%s" title="Road to Silicon V/Alley" />
+		<Typography variant="h1">Road to Silicon V/Alley</Typography>
+	</>
 )
 
 export default IndexPage
