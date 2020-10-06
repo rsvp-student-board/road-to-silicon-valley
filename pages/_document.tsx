@@ -1,10 +1,10 @@
 import { ServerStyleSheets as MaterialUiServerStyleSheets } from "@material-ui/core/styles"
-import NextDocument from "next/document"
+import NextDocument, { DocumentContext } from "next/document"
 import React from "react"
 import { ServerStyleSheet as StyledComponentSheets } from "styled-components"
 
 export default class Document extends NextDocument {
-	static async getInitialProps(ctx: any) {
+	static async getInitialProps(ctx: DocumentContext) {
 		const styledComponentSheet = new StyledComponentSheets()
 		const materialUiSheets = new MaterialUiServerStyleSheets()
 		const originalRenderPage = ctx.renderPage
@@ -12,10 +12,11 @@ export default class Document extends NextDocument {
 		try {
 			ctx.renderPage = () =>
 				originalRenderPage({
-					enhanceApp: (App: any) => (props: any) =>
-						styledComponentSheet.collectStyles(
+					enhanceApp: (App: Function) => (props: Object) => {
+						return styledComponentSheet.collectStyles(
 							materialUiSheets.collect(<App {...props} />)
-						),
+						)
+					},
 				})
 
 			const initialProps = await NextDocument.getInitialProps(ctx)
