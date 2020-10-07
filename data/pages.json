@@ -1,0 +1,22 @@
+[
+	{
+		"display": "About",
+		"path": "/about"
+	},
+	{
+		"display": "Recruitment",
+		"path": "/recruitment"
+	},
+	{
+		"display": "Members",
+		"path": "/members"
+	},
+	{
+		"display": "Gallery",
+		"path": "/gallery"
+	},
+	{
+		"display": "Contact",
+		"path": "/contact"
+	}
+]
