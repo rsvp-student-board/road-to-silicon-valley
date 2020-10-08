@@ -1,5 +1,6 @@
 import {
 	AppBar,
+	Box,
 	IconButton,
 	makeStyles,
 	SwipeableDrawer,
@@ -10,7 +11,7 @@ import {
 } from "@material-ui/core"
 import Link from "next/link"
 import React, { useState } from "react"
-import { VscMenu } from "react-icons/vsc"
+import { VscClose, VscMenu } from "react-icons/vsc"
 import Img from "react-optimized-image"
 import pages from "../../data/pages.json"
 import Logo from "../../images/logo.png"
@@ -18,9 +19,12 @@ import NavLink from "./NavLink"
 
 const useStyles = makeStyles((theme: Theme) => ({
 	root: {
-		paddingLeft: theme.spacing(2),
-		paddingRight: theme.spacing(2),
+		padding: `${theme.spacing(0.5)}px ${theme.spacing(2)}px`,
 		transition: theme.transitions.create(["background-color", "box-shadow"]),
+		[theme.breakpoints.down("md")]: {
+			paddingTop: theme.spacing(1),
+			paddingBottom: theme.spacing(1),
+		},
 	},
 	brandContainer: {
 		flexGrow: 1,
@@ -36,6 +40,18 @@ const useStyles = makeStyles((theme: Theme) => ({
 		},
 		"&:active": {
 			transform: "scale(0.9)",
+		},
+	},
+	drawer: {
+		width: "40%",
+		minWidth: 300,
+		paddingBottom: theme.spacing(1.5),
+	},
+	drawerClose: {
+		padding: `${theme.spacing(1.5)}px ${theme.spacing(4.5)}px`,
+		[theme.breakpoints.down("sm")]: {
+			paddingLeft: theme.spacing(4),
+			paddingRight: theme.spacing(4),
 		},
 	},
 }))
@@ -106,8 +122,52 @@ const Navbar: React.FC = () => {
 								onOpen={toggleDrawer(true)}
 								disableBackdropTransition={!iOS}
 								disableDiscovery={iOS}
+								classes={{
+									paper: classes.drawer,
+								}}
 							>
-								<h1>Hello</h1>
+								<Box
+									display="flex"
+									flexDirection="column"
+									justifyContent="center"
+									height="100%"
+								>
+									<Box
+										display="flex"
+										justifyContent="flex-end"
+										className={classes.drawerClose}
+									>
+										<IconButton
+											edge="start"
+											color="inherit"
+											aria-label="close-menu"
+											onClick={toggleDrawer(false)}
+										>
+											<VscClose />
+										</IconButton>
+									</Box>
+									<Box
+										display="flex"
+										flexDirection="column"
+										justifyContent="center"
+										alignItems="center"
+										flexGrow={1}
+									>
+										{pages.map(
+											(page: { display: string; path: string }, index) => (
+												<div
+													key={`drawer-nav-link-${index}`}
+													onClick={toggleDrawer(false)}
+												>
+													<NavLink
+														displayText={page.display}
+														href={page.path}
+													/>
+												</div>
+											)
+										)}
+									</Box>
+								</Box>
 							</SwipeableDrawer>
 						</>
 					) : (

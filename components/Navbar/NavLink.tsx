@@ -25,6 +25,11 @@ const useStyles = makeStyles((theme: Theme) => ({
 		"&:active": {
 			transform: "scale(0.9)",
 		},
+		[theme.breakpoints.down("md")]: {
+			display: "inline-block",
+			marginTop: theme.spacing(2),
+			marginBottom: theme.spacing(2),
+		},
 	},
 	typography: ({ active }: NavLinkStyleProps) => ({
 		position: "relative",
@@ -32,8 +37,12 @@ const useStyles = makeStyles((theme: Theme) => ({
 		fontWeight: 600,
 		textTransform: "uppercase",
 		letterSpacing: 1,
+		width: "auto",
 		color: active ? theme.palette.text.primary : theme.palette.text.secondary,
 		transition: theme.transitions.create(["color"]),
+		[theme.breakpoints.down("md")]: {
+			fontSize: theme.typography.fontSize * 2,
+		},
 	}),
 	highlight: ({ active }: NavLinkStyleProps) => ({
 		position: "absolute",
