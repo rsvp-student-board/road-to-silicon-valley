@@ -1,5 +1,4 @@
 import { createMuiTheme } from "@material-ui/core"
-
 export default createMuiTheme({
 	palette: {
 		primary: {
@@ -18,29 +17,30 @@ export default createMuiTheme({
 		},
 	},
 	typography: {
-		fontFamily: '"Source Sans Pro", "Helvetica", "Arial", "sans-serif"',
+		fontFamily: "Aileron",
 		h1: {
-			fontFamily: '"Bebas Neue", "Arial", "Helvetica", "sans-serif',
+			fontFamily: "Aileron",
 			textTransform: "uppercase",
+			fontWeight: 100,
 		},
 		h2: {
-			fontFamily: '"Bebas Neue", "Arial", "Helvetica", "sans-serif',
+			fontFamily: "Aileron",
 			textTransform: "uppercase",
 		},
 		h3: {
-			fontFamily: '"Bebas Neue", "Arial", "Helvetica", "sans-serif',
+			fontFamily: "Aileron",
 			textTransform: "uppercase",
 		},
 		h4: {
-			fontFamily: '"Bebas Neue", "Arial", "Helvetica", "sans-serif',
+			fontFamily: "Aileron",
 			textTransform: "uppercase",
 		},
 		h5: {
-			fontFamily: '"Bebas Neue", "Arial", "Helvetica", "sans-serif',
+			fontFamily: "Aileron",
 			textTransform: "uppercase",
 		},
 		h6: {
-			fontFamily: '"Bebas Neue", "Arial", "Helvetica", "sans-serif',
+			fontFamily: "Aileron",
 			textTransform: "uppercase",
 		},
 	},
