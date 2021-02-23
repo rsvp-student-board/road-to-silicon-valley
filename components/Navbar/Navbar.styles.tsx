@@ -9,12 +9,12 @@ const useNavbarStyles = makeStyles((theme) => ({
 	root: {
 		zIndex: 9999,
 		backgroundColor: (props: NavbarStylesProps) =>
-			props.isScrolled || props.isOpen
+			props.isScrolled && !props.isOpen
 				? fade(theme.palette.background.default, 0.7)
 				: "transparent",
 		padding: `${theme.spacing(1.5)}px ${theme.spacing(5)}px`,
 		backdropFilter: (props: NavbarStylesProps) =>
-			props.isScrolled || props.isOpen ? "saturate(180%) blur(20px)" : "none",
+			props.isScrolled && !props.isOpen ? "saturate(180%) blur(20px)" : "none",
 		transition: theme.transitions.create([
 			"background-color",
 			"padding",

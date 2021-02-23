@@ -20,12 +20,13 @@ const useDrawerToggleStyles = makeStyles((theme) => ({
 	svg: {
 		fill: "transparent",
 		stroke: (props: DrawerToggleStylesProps) =>
-			props.isScrolled
+			props.isScrolled || props.isOpen
 				? theme.palette.common.black
 				: theme.palette.common.white,
-		strokeWidth: 6,
+		strokeWidth: 5,
 		width: 36,
 		height: 36,
+		transition: theme.transitions.create(["stroke"]),
 		"& path": {
 			strokeDasharray: (props: DrawerToggleStylesProps) =>
 				props.isOpen ? "90 207" : "60 207",

@@ -11,13 +11,6 @@ const useNavLinkStyles = makeStyles((theme) => ({
 		"&:hover, &:focus": {
 			textDecoration: "none",
 		},
-	},
-	container: {
-		paddingLeft: theme.spacing(1),
-		paddingRight: theme.spacing(1) - 1,
-		margin: theme.spacing(1),
-		position: "relative",
-		transition: theme.transitions.create(["transform"]),
 		"&:hover": {
 			"& $typography": {
 				opacity: 1,
@@ -26,6 +19,13 @@ const useNavLinkStyles = makeStyles((theme) => ({
 				height: "50%",
 			},
 		},
+	},
+	container: {
+		paddingLeft: theme.spacing(1),
+		paddingRight: theme.spacing(1) - 1,
+		margin: theme.spacing(1),
+		position: "relative",
+		transition: theme.transitions.create(["transform"]),
 		"&:active": {
 			transform: "scale(0.95)",
 		},
@@ -36,7 +36,7 @@ const useNavLinkStyles = makeStyles((theme) => ({
 		},
 	},
 	typography: ({ active, isScrolled }: NavLinkStylesProps) => ({
-		color: isScrolled ? theme.palette.common.black : theme.palette.common.white,
+		color: theme.palette.common.black,
 		position: "relative",
 		zIndex: 999,
 		fontWeight: 600,
@@ -48,6 +48,9 @@ const useNavLinkStyles = makeStyles((theme) => ({
 		transition: theme.transitions.create(["color", "opacity"]),
 		[theme.breakpoints.up("md")]: {
 			fontSize: theme.typography.fontSize,
+			color: isScrolled
+				? theme.palette.common.black
+				: theme.palette.common.white,
 		},
 	}),
 	highlight: ({ active }: NavLinkStylesProps) => ({
