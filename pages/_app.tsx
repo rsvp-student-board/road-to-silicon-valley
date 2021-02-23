@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar"
 import theme from "@/theme"
 import { CssBaseline, ThemeProvider } from "@material-ui/core"
 import { DefaultSeo } from "next-seo"
@@ -18,6 +19,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 			<DefaultSeo {...SEO} />
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
+				<Navbar />
 				<Component {...pageProps} />
 			</ThemeProvider>
 		</>
