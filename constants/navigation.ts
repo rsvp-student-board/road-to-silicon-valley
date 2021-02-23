@@ -13,6 +13,10 @@ export const NAV_ROUTES: NavRoute[] = [
 		path: "/members",
 	},
 	{
+		title: "Mentorship",
+		path: "/mentorship",
+	},
+	{
 		title: "Gallery",
 		path: "/gallery",
 	},

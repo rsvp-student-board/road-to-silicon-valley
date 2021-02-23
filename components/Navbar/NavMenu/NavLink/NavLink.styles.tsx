@@ -35,7 +35,7 @@ const useNavLinkStyles = makeStyles((theme) => ({
 			marginBottom: theme.spacing(2),
 		},
 	},
-	typography: ({ active, isScrolled }: NavLinkStylesProps) => ({
+	typography: {
 		color: theme.palette.common.black,
 		position: "relative",
 		zIndex: 999,
@@ -43,28 +43,28 @@ const useNavLinkStyles = makeStyles((theme) => ({
 		textTransform: "uppercase",
 		letterSpacing: 1,
 		width: "auto",
-		opacity: active ? 1 : 0.85,
+		opacity: (props: NavLinkStylesProps) => (props.active ? 1 : 0.85),
 		fontSize: theme.typography.fontSize * 2,
 		transition: theme.transitions.create(["color", "opacity"]),
 		[theme.breakpoints.up("md")]: {
 			fontSize: theme.typography.fontSize,
-			color: isScrolled
-				? theme.palette.common.black
-				: theme.palette.common.white,
+			color: (props: NavLinkStylesProps) =>
+				props.isScrolled
+					? theme.palette.common.black
+					: theme.palette.common.white,
 		},
-	}),
-	highlight: ({ active }: NavLinkStylesProps) => ({
+	},
+	highlight: {
 		position: "absolute",
 		bottom: 0,
 		left: 0,
 		zIndex: 998,
 		width: "100%",
-		height: active ? "50%" : 0,
-		backgroundColor: active
-			? theme.palette.secondary.main
-			: theme.palette.primary.main,
+		height: (props: NavLinkStylesProps) => (props.active ? "50%" : 0),
+		backgroundColor: (props: NavLinkStylesProps) =>
+			props.active ? theme.palette.secondary.main : theme.palette.primary.main,
 		transition: theme.transitions.create(["background-color", "height"]),
-	}),
+	},
 }))
 
 export default useNavLinkStyles

@@ -1,3 +1,4 @@
+import Logo from "@/images/logo.svg"
 import {
 	AppBar,
 	Drawer,
@@ -5,7 +6,6 @@ import {
 	Toolbar,
 	useMediaQuery,
 } from "@material-ui/core"
-import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import DrawerToggle from "./DrawerToggle"
@@ -44,13 +44,8 @@ const Navbar: React.FC = () => {
 	return (
 		<AppBar position="fixed" elevation={0} className={classes.root}>
 			<Toolbar className={classes.toolbar}>
-				<Link href="/">
-					<Image
-						src="/images/logo.png"
-						height="48"
-						width="48"
-						className={classes.logo}
-					/>
+				<Link href="/" passHref>
+					<Logo onClick={closeDrawer} className={classes.logo} />
 				</Link>
 				<DrawerToggle
 					isOpen={isOpen}

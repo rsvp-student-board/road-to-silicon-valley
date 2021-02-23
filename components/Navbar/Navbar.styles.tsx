@@ -8,11 +8,13 @@ interface NavbarStylesProps {
 const useNavbarStyles = makeStyles((theme) => ({
 	root: {
 		zIndex: 9999,
+		display: "flex",
+		alignItems: "center",
 		backgroundColor: (props: NavbarStylesProps) =>
 			props.isScrolled && !props.isOpen
 				? fade(theme.palette.background.default, 0.7)
 				: "transparent",
-		padding: `${theme.spacing(1.5)}px ${theme.spacing(5)}px`,
+		padding: `${theme.spacing(1.5)}px ${theme.spacing(3)}px`,
 		backdropFilter: (props: NavbarStylesProps) =>
 			props.isScrolled && !props.isOpen ? "saturate(180%) blur(20px)" : "none",
 		transition: theme.transitions.create([
@@ -29,23 +31,30 @@ const useNavbarStyles = makeStyles((theme) => ({
 				props.isScrolled ? "saturate(180%) blur(20px)" : "none",
 			padding: (props: NavbarStylesProps) =>
 				props.isScrolled
-					? `${theme.spacing(0)}px ${theme.spacing(5)}px`
-					: `${theme.spacing(1.5)}px ${theme.spacing(5)}px`,
+					? `${theme.spacing(0)}px ${theme.spacing(3)}px`
+					: `${theme.spacing(1.5)}px ${theme.spacing(3)}px`,
 		},
 	},
 	toolbar: {
 		justifyContent: "space-between",
+		maxWidth: theme.breakpoints.values.lg,
+		width: "100%",
 	},
 	logo: {
 		cursor: "pointer",
+		width: "auto",
+		height: "2.5rem",
 		opacity: 0.85,
-		transition: theme.transitions.create(["opacity", "transform"]),
+		transition: theme.transitions.create(["opacity", "height", "transform"]),
 		"&:hover": {
 			opacity: 1,
-			transform: "scale(1.1)",
 		},
 		"&:active": {
-			transform: "scale(1.05)",
+			transform: "scale(0.95)",
+		},
+		[theme.breakpoints.up("md")]: {
+			height: (props: NavbarStylesProps) =>
+				props.isScrolled ? "2.5rem" : "3rem",
 		},
 	},
 	drawer: {
