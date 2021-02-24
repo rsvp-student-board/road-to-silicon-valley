@@ -36,6 +36,23 @@ const theme = createMuiTheme({
 		].join(","),
 		fontSize: 16,
 	},
+	props: {
+		MuiButton: {
+			disableElevation: true,
+		},
+	},
+	overrides: {
+		MuiCssBaseline: {
+			"@global": {
+				html: {
+					scrollBehavior: "smooth",
+				},
+				body: {
+					scrollBehavior: "smooth",
+				},
+			},
+		},
+	},
 })
 
 export default theme

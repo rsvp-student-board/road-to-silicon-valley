@@ -2,7 +2,7 @@ import { fade, makeStyles } from "@material-ui/core/styles"
 
 const useLandingStyles = makeStyles((theme) => ({
 	root: {
-		height: "55vh",
+		height: "60vh",
 		width: "100%",
 		"& .react-parallax-background-children": {
 			width: "100%",
@@ -42,7 +42,7 @@ const useLandingStyles = makeStyles((theme) => ({
 	},
 	title: {
 		fontWeight: 600,
-		fontSize: "calc(2rem + 2.5vw)",
+		fontSize: "calc(3rem + 2.5vw)",
 		marginBottom: theme.spacing(2),
 		letterSpacing: 0,
 		lineHeight: 1.1,
@@ -52,7 +52,7 @@ const useLandingStyles = makeStyles((theme) => ({
 	},
 	subtitle: {
 		fontWeight: "normal",
-		fontSize: "calc(1rem + 1.5vw)",
+		fontSize: "calc(1.5rem + 1.5vw)",
 		fontStyle: "italic",
 	},
 	paper: {

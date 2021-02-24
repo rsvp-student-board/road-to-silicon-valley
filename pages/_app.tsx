@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import theme from "@/theme"
 import { CssBaseline, ThemeProvider } from "@material-ui/core"
@@ -21,6 +22,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 				<CssBaseline />
 				<Navbar />
 				<Component {...pageProps} />
+				<Footer />
 			</ThemeProvider>
 		</>
 	)
