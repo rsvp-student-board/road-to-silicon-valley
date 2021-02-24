@@ -16,7 +16,7 @@ const useNavbarStyles = makeStyles((theme) => ({
 				: "transparent",
 		padding: `${theme.spacing(1.5)}px ${theme.spacing(3)}px`,
 		backdropFilter: (props: NavbarStylesProps) =>
-			props.isScrolled && !props.isOpen ? "saturate(180%) blur(20px)" : "none",
+			props.isScrolled && !props.isOpen ? "saturate(180%) blur(10px)" : "none",
 		transition: theme.transitions.create([
 			"background-color",
 			"padding",
@@ -28,7 +28,7 @@ const useNavbarStyles = makeStyles((theme) => ({
 					? fade(theme.palette.background.default, 0.7)
 					: "transparent",
 			backdropFilter: (props: NavbarStylesProps) =>
-				props.isScrolled ? "saturate(180%) blur(20px)" : "none",
+				props.isScrolled ? "saturate(180%) blur(10px)" : "none",
 			padding: (props: NavbarStylesProps) =>
 				props.isScrolled
 					? `${theme.spacing(0)}px ${theme.spacing(3)}px`
@@ -62,7 +62,7 @@ const useNavbarStyles = makeStyles((theme) => ({
 			7.5
 		)}px ${theme.spacing(2)}px`,
 		backgroundColor: fade(theme.palette.background.default, 0.7),
-		backdropFilter: "saturate(180%) blur(20px)",
+		backdropFilter: "saturate(180%) blur(10px)",
 		zIndex: 9998,
 	},
 }))
