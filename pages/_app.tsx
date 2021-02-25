@@ -29,3 +29,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 }
 
 export default App
+
+export interface HeroPageProps {
+	imgBase64: string
+	imgSrc: string
+}

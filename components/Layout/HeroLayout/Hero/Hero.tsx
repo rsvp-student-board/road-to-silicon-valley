@@ -6,9 +6,17 @@ import useHeroStyles from "./Hero.styles"
 
 interface HeroProps {
 	title: string
+	imgBase64: string
+	imgSrc: string
+	imgPosition?: string
 }
 
-const Hero: React.FC<HeroProps> = ({ title }) => {
+const Hero: React.FC<HeroProps> = ({
+	title,
+	imgBase64,
+	imgSrc,
+	imgPosition,
+}) => {
 	const classes = useHeroStyles()
 
 	return (
@@ -18,12 +26,19 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
 			contentClassName={classes.content}
 		>
 			<Background>
-				<Image
-					src="/images/hero.jpeg"
+				<img
+					aria-hidden="true"
 					alt={SITE_NAME}
+					src={imgBase64}
+					className={classes.blurredImage}
+				/>
+				<Image
+					src={imgSrc}
+					alt={SITE_NAME}
+					title={SITE_NAME}
 					layout="fill"
 					objectFit="cover"
-					objectPosition="center 65%"
+					objectPosition={imgPosition || "center center"}
 					priority
 				/>
 			</Background>

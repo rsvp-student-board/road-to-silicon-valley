@@ -4,6 +4,7 @@ import { getBase64 } from "@plaiceholder/base64"
 import { getImage } from "@plaiceholder/next"
 import { GetStaticProps } from "next"
 import { NextSeo } from "next-seo"
+import { HeroPageProps } from "./_app"
 
 export const getStaticProps: GetStaticProps = async () => {
 	const imgSrc = "/images/landing.jpg"
@@ -18,12 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	}
 }
 
-interface IndexPageProps {
-	imgBase64: string
-	imgSrc: string
-}
-
-const IndexPage: React.FC<IndexPageProps> = ({ imgBase64, imgSrc }) => {
+const IndexPage: React.FC<HeroPageProps> = ({ imgBase64, imgSrc }) => {
 	return (
 		<>
 			<NextSeo titleTemplate="%s" title={SITE_NAME} />

@@ -28,10 +28,7 @@ const useHeroStyles = makeStyles((theme) => ({
 		height: "100%",
 		textShadow: `2px 2px 6px ${fade(theme.palette.common.black, 0.4)}`,
 		backgroundColor: fade(theme.palette.common.black, 0.6),
-		padding: `84px ${theme.spacing(2.5)}px 42px`,
-		[theme.breakpoints.up("md")]: {
-			padding: `0 ${theme.spacing(2.5)}px`,
-		},
+		padding: `0 ${theme.spacing(2.5)}px`,
 		[theme.breakpoints.up("lg")]: {
 			padding: `0 ${theme.spacing(2)}px`,
 		},
@@ -50,6 +47,19 @@ const useHeroStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up("lg")]: {
 			fontSize: theme.typography.fontSize * 6,
 		},
+	},
+	blurredImage: {
+		position: "absolute",
+		top: 0,
+		left: 0,
+		right: 0,
+		bottom: 0,
+		width: "100%",
+		height: "100%",
+		objectFit: "cover",
+		objectPosition: "center",
+		filter: "blur(2rem)",
+		transform: "scale(1.2)",
 	},
 }))
 
