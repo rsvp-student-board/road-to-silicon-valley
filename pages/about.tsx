@@ -1,11 +1,12 @@
-import { Disciplines } from "@/components/About"
+import { Disciplines, InvolvementOpportunities } from "@/components/About"
 import { HeroLayout } from "@/components/Layout"
-import { Content, Header } from "@/components/Typography"
+import { Content, Header, Hyperlink } from "@/components/Typography"
 import { WHAT_IS_RSVP } from "@/content"
 import { Grid, Typography } from "@material-ui/core"
 import { getBase64 } from "@plaiceholder/base64"
 import { getImage } from "@plaiceholder/next"
 import { GetStaticProps } from "next"
+import Link from "next/link"
 import { HeroPageProps } from "./_app"
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -38,6 +39,24 @@ const AboutPage: React.FC<HeroPageProps> = ({ imgBase64, imgSrc }) => {
 						</Typography>
 					))}
 					<Disciplines />
+				</Content>
+			</Grid>
+			<Grid item xs={12}>
+				<Header>Involvement Opportunities</Header>
+				<Content>
+					<Typography variant="body1">
+						If you are a student interested in joining RSVP as a cohort member,
+						please refer to our{" "}
+						<Link href="/recruitment" passHref>
+							<Hyperlink>recruitment page</Hyperlink>
+						</Link>
+						.
+					</Typography>
+					<Typography variant="body1">
+						Corporate partners, RU Alumni, technologists, entrepreneurs, and
+						investors can get involved through any of the following.
+					</Typography>
+					<InvolvementOpportunities />
 				</Content>
 			</Grid>
 		</HeroLayout>

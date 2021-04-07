@@ -1,3 +1,4 @@
 import Disciplines from "./Disciplines"
+import InvolvementOpportunities from "./InvolvementOpportunities"
 
-export { Disciplines }
+export { Disciplines, InvolvementOpportunities }

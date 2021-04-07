@@ -14,6 +14,7 @@ const theme = createMuiTheme({
 		},
 		background: {
 			default: "#F9F9F9",
+			paper: "#FDFDFD",
 		},
 		common: {
 			white: "#F9F9F9",
@@ -34,7 +35,7 @@ const theme = createMuiTheme({
 			'"Segoe UI Emoji"',
 			'"Segoe UI Symbol"',
 		].join(","),
-		fontSize: 16,
+		// fontSize: 16,
 	},
 	props: {
 		MuiButton: {
