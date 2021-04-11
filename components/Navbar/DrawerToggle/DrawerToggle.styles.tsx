@@ -7,6 +7,7 @@ interface DrawerToggleStylesProps {
 
 const useDrawerToggleStyles = makeStyles((theme) => ({
 	root: {
+		marginRight: -theme.spacing(1.5),
 		display: "block",
 		opacity: 0.85,
 		transition: theme.transitions.create("opacity"),

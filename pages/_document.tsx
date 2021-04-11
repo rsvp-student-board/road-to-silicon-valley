@@ -14,6 +14,20 @@ class MyDocument extends Document {
 						type="font/woff2"
 						crossOrigin="anonymous"
 					/>
+					<link
+						rel="preload"
+						href="/fonts/bitter.woff2"
+						as="font"
+						type="font/woff2"
+						crossOrigin="anonymous"
+					/>
+					<link
+						rel="preload"
+						href="/fonts/bitter-italic.woff2"
+						as="font"
+						type="font/woff2"
+						crossOrigin="anonymous"
+					/>
 					<link rel="stylesheet" href="/fonts/fonts.css" />
 					<link
 						rel="apple-touch-icon"

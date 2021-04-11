@@ -41,19 +41,17 @@ const useLandingStyles = makeStyles((theme) => ({
 		backgroundColor: fade(theme.palette.common.black, 0.6),
 	},
 	title: {
-		fontWeight: 600,
+		fontWeight: 700,
 		fontSize: "calc(3rem + 2.5vw)",
-		marginBottom: theme.spacing(2),
-		letterSpacing: 0,
+		// fontVariant: "small-caps",
+		letterSpacing: 2,
 		lineHeight: 1.1,
-		// [theme.breakpoints.up("md")]: {
-		// 	 marginBottom: theme.spacing(3),
-		// },
 	},
 	subtitle: {
 		fontWeight: "normal",
 		fontSize: "calc(1.5rem + 1.5vw)",
 		fontStyle: "italic",
+		fontFamily: theme.typography.body1.fontFamily,
 	},
 	paper: {
 		width: "90%",

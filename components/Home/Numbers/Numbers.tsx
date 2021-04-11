@@ -24,11 +24,13 @@ const Numbers: React.FC = () => {
 							className={classes.gridItem}
 							key={`numbers-${index}`}
 						>
-							<CountUp
-								end={numberItem.number}
-								duration={5}
-								className={classes.countup}
-							/>
+							<Typography variant="body1">
+								<CountUp
+									end={numberItem.number}
+									duration={5}
+									className={classes.countup}
+								/>
+							</Typography>
 							<Typography className={classes.title}>
 								{numberItem.title}
 							</Typography>

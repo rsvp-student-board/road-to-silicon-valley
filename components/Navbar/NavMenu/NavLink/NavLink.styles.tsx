@@ -1,4 +1,4 @@
-import { fade, makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
 
 interface NavLinkStylesProps {
 	active: boolean
@@ -16,7 +16,7 @@ const useNavLinkStyles = makeStyles((theme) => ({
 				opacity: 1,
 			},
 			"& $highlight": {
-				height: "50%",
+				height: (props: NavLinkStylesProps) => (props.active ? "100%" : "50%"),
 			},
 		},
 	},
@@ -47,13 +47,9 @@ const useNavLinkStyles = makeStyles((theme) => ({
 		fontSize: theme.typography.fontSize * 2,
 		transition: theme.transitions.create(["color", "opacity", "text-shadow"]),
 		[theme.breakpoints.up("md")]: {
-			textShadow: (props: NavLinkStylesProps) =>
-				props.active && !props.isScrolled
-					? `2px 2px 4px ${fade(theme.palette.common.black, 1)}`
-					: "none",
 			fontSize: theme.typography.fontSize,
 			color: (props: NavLinkStylesProps) =>
-				props.isScrolled
+				props.isScrolled || props.active
 					? theme.palette.common.black
 					: theme.palette.common.white,
 		},
@@ -64,7 +60,8 @@ const useNavLinkStyles = makeStyles((theme) => ({
 		left: 0,
 		zIndex: 998,
 		width: "100%",
-		height: (props: NavLinkStylesProps) => (props.active ? "50%" : 0),
+		height: (props: NavLinkStylesProps) =>
+			props.active ? (props.isScrolled ? "50%" : "100%") : 0,
 		backgroundColor: (props: NavLinkStylesProps) =>
 			props.active ? theme.palette.secondary.main : theme.palette.primary.main,
 		transition: theme.transitions.create(["background-color", "height"]),

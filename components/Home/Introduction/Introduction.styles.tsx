@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles"
 
 const useIntroductionStyles = makeStyles((theme) => ({
 	tagline: {
-		fontWeight: 300,
+		fontWeight: 500,
 		// fontStyle: "italic",
 		textAlign: "center",
 		color: theme.palette.text.primary,

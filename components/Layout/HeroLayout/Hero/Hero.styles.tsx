@@ -2,7 +2,7 @@ import { fade, makeStyles } from "@material-ui/core/styles"
 
 const useHeroStyles = makeStyles((theme) => ({
 	root: {
-		height: "35vh",
+		height: "30vh",
 		width: "100%",
 		background: theme.palette.primary.main,
 		"& .react-parallax-background-children": {
@@ -35,9 +35,10 @@ const useHeroStyles = makeStyles((theme) => ({
 	},
 	title: {
 		color: theme.palette.common.white,
-		fontWeight: 500,
+		fontWeight: 600,
 		textTransform: "uppercase",
-		fontSize: theme.typography.fontSize * 2.5,
+		letterSpacing: 1,
+		fontSize: theme.typography.fontSize * 2.75,
 		[theme.breakpoints.up("sm")]: {
 			fontSize: theme.typography.fontSize * 4,
 		},

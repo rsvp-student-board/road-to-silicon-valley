@@ -1,4 +1,4 @@
-import { Disciplines, InvolvementOpportunities } from "@/components/About"
+import { InvolvementOpportunities } from "@/components/About"
 import { HeroLayout } from "@/components/Layout"
 import { Content, Header, Hyperlink } from "@/components/Typography"
 import { WHAT_IS_RSVP } from "@/content"
@@ -38,7 +38,7 @@ const AboutPage: React.FC<HeroPageProps> = ({ imgBase64, imgSrc }) => {
 							{paragraph}
 						</Typography>
 					))}
-					<Disciplines />
+					{/* <Disciplines /> */}
 				</Content>
 			</Grid>
 			<Grid item xs={12}>

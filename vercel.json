@@ -3,7 +3,25 @@
 	"trailingSlash": false,
 	"headers": [
 	  {
-		"source": "/fonts/inter.woff2",
+		"source": "/fonts/heebo.woff2",
+		"headers": [
+		  {
+			"key": "Cache-Control",
+			"value": "public, max-age=31536000, immutable"
+		  }
+		]
+	  },
+	  {
+		"source": "/fonts/bitter.woff2",
+		"headers": [
+		  {
+			"key": "Cache-Control",
+			"value": "public, max-age=31536000, immutable"
+		  }
+		]
+	  },
+	  {
+		"source": "/fonts/bitter-italic.woff2",
 		"headers": [
 		  {
 			"key": "Cache-Control",

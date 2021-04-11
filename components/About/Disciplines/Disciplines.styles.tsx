@@ -9,7 +9,6 @@ const useDisciplinesStyles = makeStyles((theme) => ({
 	title: {
 		textTransform: "uppercase",
 		fontWeight: 600,
-
 		fontStyle: "italic",
 	},
 }))

@@ -23,7 +23,7 @@ const theme = createMuiTheme({
 	},
 	typography: {
 		fontFamily: [
-			'"Inter"',
+			'"Bitter"',
 			"-apple-system",
 			"BlinkMacSystemFont",
 			'"Segoe UI"',
@@ -35,6 +35,36 @@ const theme = createMuiTheme({
 			'"Segoe UI Emoji"',
 			'"Segoe UI Symbol"',
 		].join(","),
+		body1: {
+			fontFamily: [
+				'"Inter"',
+				"-apple-system",
+				"BlinkMacSystemFont",
+				'"Segoe UI"',
+				"Roboto",
+				'"Helvetica Neue"',
+				"Arial",
+				"sans-serif",
+				'"Apple Color Emoji"',
+				'"Segoe UI Emoji"',
+				'"Segoe UI Symbol"',
+			].join(","),
+		},
+		button: {
+			fontFamily: [
+				'"Inter"',
+				"-apple-system",
+				"BlinkMacSystemFont",
+				'"Segoe UI"',
+				"Roboto",
+				'"Helvetica Neue"',
+				"Arial",
+				"sans-serif",
+				'"Apple Color Emoji"',
+				'"Segoe UI Emoji"',
+				'"Segoe UI Symbol"',
+			].join(","),
+		},
 		// fontSize: 16,
 	},
 	props: {

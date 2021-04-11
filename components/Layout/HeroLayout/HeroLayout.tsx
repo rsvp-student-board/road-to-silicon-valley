@@ -20,7 +20,7 @@ const HeroLayout: React.FC<HeroLayoutProps> = ({
 	return (
 		<>
 			<NextSeo title={title} />
-			<Box component="main" minHeight="calc(100vh - 90px)">
+			<Box component="main" minHeight="calc(100vh - 82px)">
 				<Hero
 					title={title}
 					imgBase64={imgBase64}
