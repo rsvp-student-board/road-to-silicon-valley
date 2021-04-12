@@ -16,6 +16,13 @@ class MyDocument extends Document {
 					/>
 					<link
 						rel="preload"
+						href="/fonts/roboto-slab.woff2"
+						as="font"
+						type="font/woff2"
+						crossOrigin="anonymous"
+					/>
+					{/* <link
+						rel="preload"
 						href="/fonts/bitter.woff2"
 						as="font"
 						type="font/woff2"
@@ -27,7 +34,7 @@ class MyDocument extends Document {
 						as="font"
 						type="font/woff2"
 						crossOrigin="anonymous"
-					/>
+					/> */}
 					<link rel="stylesheet" href="/fonts/fonts.css" />
 					<link
 						rel="apple-touch-icon"

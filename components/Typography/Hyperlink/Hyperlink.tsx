@@ -5,7 +5,12 @@ const Hyperlink: React.FC<LinkProps> = ({ children, className, ...props }) => {
 	const classes = useHyperlinkStyles()
 
 	return (
-		<Link className={`${classes.root} ${className || ""}`} {...props}>
+		<Link
+			target="_blank"
+			rel="noopener"
+			className={`${classes.root} ${className || ""}`}
+			{...props}
+		>
 			{children}
 		</Link>
 	)

@@ -23,14 +23,14 @@ const theme = createMuiTheme({
 	},
 	typography: {
 		fontFamily: [
-			'"Bitter"',
+			'"Roboto Slab"',
 			"-apple-system",
 			"BlinkMacSystemFont",
 			'"Segoe UI"',
 			"Roboto",
 			'"Helvetica Neue"',
 			"Arial",
-			"sans-serif",
+			"serif",
 			'"Apple Color Emoji"',
 			'"Segoe UI Emoji"',
 			'"Segoe UI Symbol"',

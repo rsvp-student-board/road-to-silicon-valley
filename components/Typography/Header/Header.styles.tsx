@@ -4,7 +4,7 @@ const useHeaderStyles = makeStyles((theme) => ({
 	header: {
 		marginBottom: theme.spacing(1.5),
 		fontSize: theme.typography.fontSize * 2,
-		fontWeight: 600,
+		fontWeight: 500,
 	},
 	divider: {
 		width: 60,

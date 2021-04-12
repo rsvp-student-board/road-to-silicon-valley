@@ -21,7 +21,7 @@ const InvolvementOpportunities: React.FC = () => {
 	}
 
 	return (
-		<Container maxWidth="sm">
+		<Container maxWidth="sm" className={classes.root}>
 			{INVOLVEMENT_OPPORTUNITIES.map((opportunity, index) => (
 				<Accordion
 					expanded={expanded === index}

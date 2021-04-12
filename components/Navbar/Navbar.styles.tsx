@@ -48,6 +48,7 @@ const useNavbarStyles = makeStyles((theme) => ({
 		transition: theme.transitions.create(["opacity", "height", "transform"]),
 		"&:hover": {
 			opacity: 1,
+			transform: "scale(1.1)",
 		},
 		"&:active": {
 			transform: "scale(0.95)",

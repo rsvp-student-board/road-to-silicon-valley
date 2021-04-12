@@ -30,6 +30,8 @@ const Introduction: React.FC = () => {
 						variant="contained"
 						color="primary"
 						href={DONATION_URL}
+						target="_blank"
+						rel="noopener"
 						className={classes.button}
 					>
 						Support RSVP

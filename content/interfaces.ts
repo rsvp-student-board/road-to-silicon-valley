@@ -12,3 +12,9 @@ export interface InvolvementOpportunity {
 	title: string
 	description: string
 }
+
+export interface MembershipBenefit {
+	title: string
+	description: string
+	icon: JSX.Element
+}

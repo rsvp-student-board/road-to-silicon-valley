@@ -1,4 +1,8 @@
-import { InvolvementOpportunities } from "@/components/About"
+import {
+	InvolvementOpportunities,
+	Mission,
+	MukeshInfo,
+} from "@/components/About"
 import { HeroLayout } from "@/components/Layout"
 import { Content, Header, Hyperlink } from "@/components/Typography"
 import { WHAT_IS_RSVP } from "@/content"
@@ -14,15 +18,30 @@ export const getStaticProps: GetStaticProps = async () => {
 	const img = await getImage(imgSrc)
 	const imgBase64 = await getBase64(img)
 
+	const mukeshImgSrc = "/images/mukesh.jpeg"
+	const mukeshImg = await getImage(mukeshImgSrc)
+	const mukeshImgBase64 = await getBase64(mukeshImg)
 	return {
 		props: {
 			imgBase64,
 			imgSrc,
+			mukeshImgBase64,
+			mukeshImgSrc,
 		},
 	}
 }
 
-const AboutPage: React.FC<HeroPageProps> = ({ imgBase64, imgSrc }) => {
+interface AboutPageProps extends HeroPageProps {
+	mukeshImgSrc: string
+	mukeshImgBase64: string
+}
+
+const AboutPage: React.FC<AboutPageProps> = ({
+	imgBase64,
+	imgSrc,
+	mukeshImgBase64,
+	mukeshImgSrc,
+}) => {
 	return (
 		<HeroLayout
 			title="About"
@@ -42,6 +61,9 @@ const AboutPage: React.FC<HeroPageProps> = ({ imgBase64, imgSrc }) => {
 				</Content>
 			</Grid>
 			<Grid item xs={12}>
+				<Mission />
+			</Grid>
+			<Grid item xs={12}>
 				<Header>Involvement Opportunities</Header>
 				<Content>
 					<Typography variant="body1">
@@ -58,6 +80,9 @@ const AboutPage: React.FC<HeroPageProps> = ({ imgBase64, imgSrc }) => {
 					</Typography>
 					<InvolvementOpportunities />
 				</Content>
+			</Grid>
+			<Grid item xs={12}>
+				<MukeshInfo imgBase64={mukeshImgBase64} imgSrc={mukeshImgSrc} />
 			</Grid>
 		</HeroLayout>
 	)
