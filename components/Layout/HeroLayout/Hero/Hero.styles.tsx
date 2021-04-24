@@ -35,7 +35,7 @@ const useHeroStyles = makeStyles((theme) => ({
 	},
 	title: {
 		color: theme.palette.common.white,
-		fontWeight: 600,
+		fontWeight: 450,
 		textTransform: "uppercase",
 		letterSpacing: 1,
 		fontSize: theme.typography.fontSize * 2.75,

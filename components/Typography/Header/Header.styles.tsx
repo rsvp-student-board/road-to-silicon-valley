@@ -3,8 +3,8 @@ import { makeStyles } from "@material-ui/core/styles"
 const useHeaderStyles = makeStyles((theme) => ({
 	header: {
 		marginBottom: theme.spacing(1.5),
-		fontSize: theme.typography.fontSize * 2,
-		fontWeight: 500,
+		fontSize: theme.typography.fontSize * 2.5,
+		fontWeight: 400,
 	},
 	divider: {
 		width: 60,

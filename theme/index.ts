@@ -69,7 +69,8 @@ const theme = createMuiTheme({
 	},
 	props: {
 		MuiButton: {
-			disableElevation: true,
+			// disableElevation: true,
+			disableRipple: true,
 		},
 	},
 	overrides: {
@@ -77,10 +78,21 @@ const theme = createMuiTheme({
 			"@global": {
 				html: {
 					scrollBehavior: "smooth",
+					background: "F9F9F9",
 				},
 				body: {
 					scrollBehavior: "smooth",
 				},
+			},
+		},
+		MuiButton: {
+			root: {
+				fontSize: 16,
+				letterSpacing: 1,
+				fontWeight: 400,
+			},
+			outlined: {
+				padding: "10px 20px",
 			},
 		},
 	},

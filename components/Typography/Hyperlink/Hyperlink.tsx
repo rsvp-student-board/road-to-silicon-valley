@@ -1,13 +1,23 @@
 import { Link, LinkProps } from "@material-ui/core"
 import useHyperlinkStyles from "./Hyperlink.styles"
 
-const Hyperlink: React.FC<LinkProps> = ({ children, className, ...props }) => {
+interface HyperlinkProps extends LinkProps {
+	external?: boolean
+}
+
+const Hyperlink: React.FC<HyperlinkProps> = ({
+	children,
+	className,
+	external,
+	...props
+}) => {
+	const externalProps = external ? { target: "_blank", rel: "noopener" } : {}
+
 	const classes = useHyperlinkStyles()
 
 	return (
 		<Link
-			target="_blank"
-			rel="noopener"
+			{...externalProps}
 			className={`${classes.root} ${className || ""}`}
 			{...props}
 		>

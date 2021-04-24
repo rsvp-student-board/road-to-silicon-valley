@@ -12,7 +12,7 @@ const useNavbarStyles = makeStyles((theme) => ({
 		alignItems: "center",
 		backgroundColor: (props: NavbarStylesProps) =>
 			props.isScrolled && !props.isOpen
-				? fade(theme.palette.background.default, 0.4)
+				? fade(theme.palette.background.default, 0.45)
 				: "transparent",
 		padding: `${theme.spacing(1.5)}px ${theme.spacing(3)}px`,
 		backdropFilter: (props: NavbarStylesProps) =>
@@ -25,7 +25,7 @@ const useNavbarStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up("md")]: {
 			backgroundColor: (props: NavbarStylesProps) =>
 				props.isScrolled
-					? fade(theme.palette.background.default, 0.4)
+					? fade(theme.palette.background.default, 0.45)
 					: "transparent",
 			backdropFilter: (props: NavbarStylesProps) =>
 				props.isScrolled ? "saturate(180%) blur(10px)" : "none",
@@ -62,7 +62,7 @@ const useNavbarStyles = makeStyles((theme) => ({
 		padding: `${theme.spacing(1) + 60}px ${theme.spacing(
 			7.5
 		)}px ${theme.spacing(2)}px`,
-		backgroundColor: fade(theme.palette.background.default, 0.4),
+		backgroundColor: fade(theme.palette.background.default, 0.45),
 		backdropFilter: "saturate(180%) blur(10px)",
 		zIndex: 9998,
 	},

@@ -22,21 +22,18 @@ const Introduction: React.FC = () => {
 							{paragraph}
 						</Typography>
 					))}
+					<Box width="100%" textAlign="center">
+						<Button
+							variant="outlined"
+							color="primary"
+							href={DONATION_URL}
+							target="_blank"
+							rel="noopener"
+						>
+							Support RSVP
+						</Button>
+					</Box>
 				</Content>
-			</Grid>
-			<Grid item xs={12}>
-				<Box width="100%" textAlign="center">
-					<Button
-						variant="contained"
-						color="primary"
-						href={DONATION_URL}
-						target="_blank"
-						rel="noopener"
-						className={classes.button}
-					>
-						Support RSVP
-					</Button>
-				</Box>
 			</Grid>
 		</ContentContainer>
 	)

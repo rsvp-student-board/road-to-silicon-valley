@@ -16,7 +16,8 @@ const useNavLinkStyles = makeStyles((theme) => ({
 				opacity: 1,
 			},
 			"& $highlight": {
-				height: (props: NavLinkStylesProps) => (props.active ? "100%" : "50%"),
+				height: (props: NavLinkStylesProps) =>
+					props.active && !props.isScrolled ? "100%" : "50%",
 			},
 		},
 	},

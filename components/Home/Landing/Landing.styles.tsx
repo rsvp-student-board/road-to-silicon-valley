@@ -41,7 +41,7 @@ const useLandingStyles = makeStyles((theme) => ({
 		backgroundColor: fade(theme.palette.common.black, 0.6),
 	},
 	title: {
-		fontWeight: 600,
+		fontWeight: 450,
 		fontSize: "calc(3rem + 2.5vw)",
 		fontVariant: "small-caps",
 		letterSpacing: 1,

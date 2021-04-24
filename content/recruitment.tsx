@@ -4,6 +4,9 @@ import { IoAirplane, IoSchool } from "react-icons/io5"
 import { RiSlideshowFill } from "react-icons/ri"
 import { MembershipBenefit } from "./interfaces"
 
+export const APPLY_NOW =
+	"The Road to Silicon V/Alley Program is currently recruiting for Cohort 3! See below for the benefits of becoming a cohort member and a brief outline of the recruitment process. Written applications are due at 11:59pm on Friday, October 8."
+
 export const MEMBERSHIP_INTRO =
 	"A new cohort of students is inducted into the Road to Silicon V/Alley Program every fall semester. In addition to being introduced to a extensive network of entrepreneurial and innovative peers, cohort members gain access to all of the following benefits:"
 
@@ -50,4 +53,9 @@ export const MEMBERSHIP_BENEFITS: Array<MembershipBenefit> = [
 			"RSVP organizes and funds trips and conferences for its students. In the past, cohort members have visited Bell Labs in Holmdell, NJ and Start-Up Grind in Redwood City, CA.",
 		icon: <IoAirplane />,
 	},
+]
+
+export const RECRUITMENT_INFO = [
+	"All students are welcome to apply to the Road to Silicon V/Alley Program. There are no requirements in terms of GPA, graduation year, major, etc. No background in technology or entrepreneurship is necessary.",
+	"The recruitment process consists of a written application and a group activity. Candidates are judged by their ambition and passion to contribute to innovation at and beyond Rutgers University. Students accepted into RSVP are creative and express a strong desire to learn.",
 ]

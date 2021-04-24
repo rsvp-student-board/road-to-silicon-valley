@@ -20,7 +20,10 @@ const MukeshInfo: React.FC<MukeshInfoProps> = ({ imgBase64, imgSrc }) => {
 					<Typography variant="body1">{MUKESH_BIO}</Typography>
 					<Typography variant="body1">
 						You can learn more about Professor Patel through his official{" "}
-						<Hyperlink href="https://www.business.rutgers.edu/faculty/mukesh-patel">
+						<Hyperlink
+							href="https://www.business.rutgers.edu/faculty/mukesh-patel"
+							external
+						>
 							Rutgers Business School page
 						</Hyperlink>
 						.
