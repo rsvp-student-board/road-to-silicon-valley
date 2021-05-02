@@ -47,22 +47,18 @@ const Navbar: React.FC = () => {
 				<Link href="/" passHref>
 					<Logo onClick={closeDrawer} className={classes.logo} />
 				</Link>
-				<DrawerToggle
-					isOpen={isOpen}
-					isScrolled={isScrolled}
-					toggleDrawer={toggleDrawer}
-				/>
+				<DrawerToggle isOpen={isOpen} toggleDrawer={toggleDrawer} />
 				{isMediumScreen ? (
-					<NavMenu isScrolled={isScrolled} closeDrawer={closeDrawer} />
+					<NavMenu closeDrawer={closeDrawer} />
 				) : (
 					<Drawer
 						open={isOpen}
 						onClose={closeDrawer}
-						anchor="top"
+						anchor="right"
 						elevation={8}
 						classes={{ paper: classes.drawer }}
 					>
-						<NavMenu isScrolled={isScrolled} closeDrawer={closeDrawer} />
+						<NavMenu closeDrawer={closeDrawer} />
 					</Drawer>
 				)}
 			</Toolbar>

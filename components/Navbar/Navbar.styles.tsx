@@ -1,4 +1,4 @@
-import { fade, makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
 
 interface NavbarStylesProps {
 	isScrolled: boolean
@@ -10,25 +10,14 @@ const useNavbarStyles = makeStyles((theme) => ({
 		zIndex: 9999,
 		display: "flex",
 		alignItems: "center",
-		backgroundColor: (props: NavbarStylesProps) =>
-			props.isScrolled && !props.isOpen
-				? fade(theme.palette.background.default, 0.45)
-				: "transparent",
+		backgroundColor: theme.palette.common.black,
 		padding: `${theme.spacing(1.5)}px ${theme.spacing(3)}px`,
-		backdropFilter: (props: NavbarStylesProps) =>
-			props.isScrolled && !props.isOpen ? "saturate(180%) blur(10px)" : "none",
 		transition: theme.transitions.create([
 			"background-color",
 			"padding",
 			"backdrop-filter",
 		]),
 		[theme.breakpoints.up("md")]: {
-			backgroundColor: (props: NavbarStylesProps) =>
-				props.isScrolled
-					? fade(theme.palette.background.default, 0.45)
-					: "transparent",
-			backdropFilter: (props: NavbarStylesProps) =>
-				props.isScrolled ? "saturate(180%) blur(10px)" : "none",
 			padding: (props: NavbarStylesProps) =>
 				props.isScrolled
 					? `${theme.spacing(0)}px ${theme.spacing(3)}px`
@@ -59,11 +48,11 @@ const useNavbarStyles = makeStyles((theme) => ({
 		},
 	},
 	drawer: {
-		padding: `${theme.spacing(1) + 60}px ${theme.spacing(
+		padding: `${theme.spacing(1) + 88}px ${theme.spacing(
 			7.5
 		)}px ${theme.spacing(2)}px`,
-		backgroundColor: fade(theme.palette.background.default, 0.45),
-		backdropFilter: "saturate(180%) blur(10px)",
+		backgroundColor: theme.palette.common.black,
+		width: "100%",
 		zIndex: 9998,
 	},
 }))

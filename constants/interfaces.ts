@@ -1,7 +1,7 @@
-export interface NavRoute {
-	title: string
-	path: `/${string}`
-}
+export type NavItem = { title: string } & (
+	| { path: string; sublist?: never }
+	| { path?: never; sublist: Array<{ title: string; path: string }> }
+)
 
 export interface ContactItem {
 	title: string

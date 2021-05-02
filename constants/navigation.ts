@@ -1,20 +1,29 @@
-import { NavRoute } from "./interfaces"
-export const NAV_ROUTES: NavRoute[] = [
+import { NavItem } from "./interfaces"
+export const NAV_ITEMS: NavItem[] = [
 	{
-		title: "About",
+		title: "About Us",
 		path: "/about",
 	},
 	{
-		title: "Recruitment",
+		title: "Get Involved",
+		path: "/get-involved",
+	},
+	{
+		title: "Cohort Recruitment",
 		path: "/recruitment",
 	},
 	{
-		title: "Members",
-		path: "/members",
-	},
-	{
-		title: "Mentorship",
-		path: "/mentorship",
+		title: "Students",
+		sublist: [
+			{
+				title: "Student Executive Board",
+				path: "/student-board",
+			},
+			{
+				title: "Active Members",
+				path: "/active-members",
+			},
+		],
 	},
 	{
 		title: "Gallery",

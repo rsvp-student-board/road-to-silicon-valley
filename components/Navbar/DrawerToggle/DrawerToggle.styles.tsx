@@ -2,7 +2,6 @@ import { makeStyles } from "@material-ui/core/styles"
 
 interface DrawerToggleStylesProps {
 	isOpen: boolean
-	isScrolled: boolean
 }
 
 const useDrawerToggleStyles = makeStyles((theme) => ({
@@ -20,13 +19,10 @@ const useDrawerToggleStyles = makeStyles((theme) => ({
 	},
 	svg: {
 		fill: "transparent",
-		stroke: (props: DrawerToggleStylesProps) =>
-			props.isScrolled || props.isOpen
-				? theme.palette.common.black
-				: theme.palette.common.white,
+		stroke: theme.palette.common.white,
 		strokeWidth: 5,
-		width: 36,
-		height: 36,
+		width: 40,
+		height: 40,
 		transition: theme.transitions.create(["stroke"]),
 		"& path": {
 			strokeDasharray: (props: DrawerToggleStylesProps) =>

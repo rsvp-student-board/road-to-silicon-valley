@@ -3,16 +3,14 @@ import useDrawerToggleStyles from "./DrawerToggle.styles"
 
 interface DrawerToggleProps {
 	isOpen: boolean
-	isScrolled: boolean
 	toggleDrawer: () => void
 }
 
 const DrawerToggle: React.FC<DrawerToggleProps> = ({
 	isOpen,
-	isScrolled,
 	toggleDrawer,
 }) => {
-	const classes = useDrawerToggleStyles({ isOpen, isScrolled })
+	const classes = useDrawerToggleStyles({ isOpen })
 
 	return (
 		<IconButton onClick={toggleDrawer} className={classes.root}>
