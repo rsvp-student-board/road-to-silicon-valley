@@ -1,4 +1,9 @@
-import { Link as MuiLink, Typography } from "@material-ui/core"
+import {
+	Link as MuiLink,
+	Theme,
+	Typography,
+	useMediaQuery,
+} from "@material-ui/core"
 import clsx from "clsx"
 import { NavItem as NavItemType } from "constants/interfaces"
 import Link from "next/link"
@@ -14,14 +19,9 @@ interface NavItemProps {
 
 const NavItem: React.FC<NavItemProps> = ({ navItem, activePath, onClick }) => {
 	const [isSubMenuOpen, setIsSubMenuOpen] = useState<boolean>(false)
-
-	const openSubMenu = () => {
-		setIsSubMenuOpen(true)
-	}
-
-	const closeSubMenu = () => {
-		setIsSubMenuOpen(false)
-	}
+	const isWiderThanSmall = useMediaQuery<Theme>((theme) =>
+		theme.breakpoints.up("md")
+	)
 
 	const classes = useNavItemStyles({
 		isActive:
@@ -31,13 +31,19 @@ const NavItem: React.FC<NavItemProps> = ({ navItem, activePath, onClick }) => {
 		isSubMenuOpen,
 	})
 
+	const toggleSubMenuOpen = () => {
+		if (!isWiderThanSmall) {
+			setIsSubMenuOpen(!isSubMenuOpen)
+		}
+	}
+
 	return (
 		<>
 			{navItem.path ? (
 				<Link href={navItem.path} passHref>
 					<MuiLink onClick={onClick} className={classes.directLink}>
 						<div className={classes.container}>
-							<Typography className={classes.typography} variant="body1">
+							<Typography className={classes.typography}>
 								{navItem.title}
 							</Typography>
 							<div className={classes.highlight} />
@@ -46,12 +52,8 @@ const NavItem: React.FC<NavItemProps> = ({ navItem, activePath, onClick }) => {
 				</Link>
 			) : (
 				navItem.sublist && (
-					<div
-						className={classes.container}
-						onMouseEnter={openSubMenu}
-						onMouseLeave={closeSubMenu}
-					>
-						<Typography className={classes.typography} variant="body1">
+					<div onClick={toggleSubMenuOpen} className={classes.container}>
+						<Typography className={classes.typography}>
 							{navItem.title} <GoChevronDown className={classes.dropdownIcon} />
 						</Typography>
 						<div className={classes.highlight} />

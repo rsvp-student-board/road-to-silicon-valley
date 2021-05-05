@@ -13,13 +13,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ closeDrawer }) => {
 	const classes = useNavMenuStyles()
 
 	return (
-		<Box
-			component="nav"
-			display="flex"
-			alignItems="center"
-			height="100%"
-			className={classes.root}
-		>
+		<Box component="nav" display="flex" height="100%" className={classes.root}>
 			{NAV_ITEMS.map((navItem) => (
 				<NavItem
 					navItem={navItem}

@@ -78,7 +78,7 @@ const theme = createMuiTheme({
 			"@global": {
 				html: {
 					scrollBehavior: "smooth",
-					background: "F9F9F9",
+					background: "#F9F9F9",
 				},
 				body: {
 					scrollBehavior: "smooth",

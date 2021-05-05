@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
 	}, [])
 
 	const classes = useNavbarStyles({ isOpen, isScrolled })
-	const isMediumScreen = useMediaQuery<Theme>((theme) =>
+	const isWiderThanSmall = useMediaQuery<Theme>((theme) =>
 		theme.breakpoints.up("md")
 	)
 
@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
 					<Logo onClick={closeDrawer} className={classes.logo} />
 				</Link>
 				<DrawerToggle isOpen={isOpen} toggleDrawer={toggleDrawer} />
-				{isMediumScreen ? (
+				{isWiderThanSmall ? (
 					<NavMenu closeDrawer={closeDrawer} />
 				) : (
 					<Drawer

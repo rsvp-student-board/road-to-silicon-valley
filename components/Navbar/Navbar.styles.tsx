@@ -49,7 +49,7 @@ const useNavbarStyles = makeStyles((theme) => ({
 	},
 	drawer: {
 		padding: `${theme.spacing(1) + 88}px ${theme.spacing(
-			7.5
+			3.5
 		)}px ${theme.spacing(2)}px`,
 		backgroundColor: theme.palette.common.black,
 		width: "100%",
