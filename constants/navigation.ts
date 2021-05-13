@@ -8,10 +8,6 @@ export const NAV_ITEMS: NavItem[] = [
 		title: "Students",
 		sublist: [
 			{
-				title: "Cohort Recruitment",
-				path: "/recruitment",
-			},
-			{
 				title: "Active Members",
 				path: "/members",
 			},
@@ -23,7 +19,16 @@ export const NAV_ITEMS: NavItem[] = [
 	},
 	{
 		title: "Get Involved",
-		path: "/involvement",
+		sublist: [
+			{
+				title: "Cohort Recruitment",
+				path: "/recruitment",
+			},
+			{
+				title: "Partner Involvement Opportunities",
+				path: "/involvement",
+			},
+		],
 	},
 	{
 		title: "Leadership",

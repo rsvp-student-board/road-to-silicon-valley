@@ -10,29 +10,18 @@ const useIntroductionStyles = makeStyles((theme) => ({
 	container: {
 		[theme.breakpoints.up("md")]: {
 			position: "relative",
-			transform: "translateY(-400px)",
-			marginBottom: -400,
+			transform: "translateY(-370px)",
+			marginBottom: -370,
 		},
 	},
-	taglineContainer: {
-		"&&": {
-			[theme.breakpoints.up("sm")]: {
-				paddingRight: theme.spacing(4),
-			},
-		},
-	},
+	taglineContainer: {},
 	tagline: {
-		fontWeight: 500,
-		fontSize: theme.typography.fontSize * 1.5,
+		borderLeft: `8px solid ${theme.palette.primary.main}`,
+		paddingLeft: theme.spacing(3),
+		fontSize: theme.typography.fontSize * 1.75,
 		color: theme.palette.text.primary,
-		textAlign: "center",
 		[theme.breakpoints.up("sm")]: {
-			fontSize: theme.typography.fontSize * 1.8,
-			textAlign: "right",
-		},
-
-		[theme.breakpoints.up("md")]: {
-			fontSize: theme.typography.fontSize * 2.25,
+			fontSize: theme.typography.fontSize * 2.5,
 		},
 	},
 	logoContainer: {
@@ -44,7 +33,7 @@ const useIntroductionStyles = makeStyles((theme) => ({
 			[theme.breakpoints.up("sm")]: {
 				marginBottom: 0,
 				justifyContent: "flex-start",
-				paddingLeft: theme.spacing(4),
+				// paddingLeft: theme.spacing(4),
 			},
 		},
 	},
@@ -66,6 +55,11 @@ const useIntroductionStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.up("sm")]: {
 			width: 60,
+		},
+	},
+	boxesGridItem: {
+		[theme.breakpoints.up("md")]: {
+			marginTop: theme.spacing(-20),
 		},
 	},
 	disciplineGridItem: {

@@ -3,6 +3,12 @@ export interface Number {
 	title: string
 }
 
+export interface FeaturedBoxContent {
+	title: string
+	description: string
+	link: string
+	imageId: string
+}
 export interface Discipline {
 	title: string
 	icon: JSX.Element

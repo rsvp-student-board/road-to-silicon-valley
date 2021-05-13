@@ -7,7 +7,7 @@ import { Box, Button, Grid, Typography } from "@material-ui/core"
 import { getBase64 } from "@plaiceholder/base64"
 import { getImage } from "@plaiceholder/next"
 import { GetStaticProps } from "next"
-import { HeroPageProps } from "./_app"
+import { BlurredImgProps } from "./_app"
 
 export const getStaticProps: GetStaticProps = async () => {
 	const imgSrc = "/images/heros/recruitment.jpeg"
@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	}
 }
 
-const RecruitmentPage: React.FC<HeroPageProps> = ({ imgBase64, imgSrc }) => {
+const RecruitmentPage: React.FC<BlurredImgProps> = ({ imgBase64, imgSrc }) => {
 	return (
 		<HeroLayout
 			title="Recruitment"

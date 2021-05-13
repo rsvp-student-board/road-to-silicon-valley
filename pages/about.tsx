@@ -11,7 +11,7 @@ import { getBase64 } from "@plaiceholder/base64"
 import { getImage } from "@plaiceholder/next"
 import { GetStaticProps } from "next"
 import Link from "next/link"
-import { HeroPageProps } from "./_app"
+import { BlurredImgProps } from "./_app"
 
 export const getStaticProps: GetStaticProps = async () => {
 	const imgSrc = "/images/heros/about.jpeg"
@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	}
 }
 
-interface AboutPageProps extends HeroPageProps {
+interface AboutPageProps extends BlurredImgProps {
 	mukeshImgSrc: string
 	mukeshImgBase64: string
 }

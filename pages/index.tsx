@@ -4,28 +4,41 @@ import { getBase64 } from "@plaiceholder/base64"
 import { getImage } from "@plaiceholder/next"
 import { GetStaticProps } from "next"
 import { NextSeo } from "next-seo"
-import { HeroPageProps } from "./_app"
+import { BlurredImgProps } from "./_app"
 
 export const getStaticProps: GetStaticProps = async () => {
-	const imgSrc = "/images/landing.jpg"
-	const img = await getImage(imgSrc)
-	const imgBase64 = await getBase64(img)
+	const imageIds = ["landing.jpg", "students.jpeg", "partners.jpeg"]
+	const props: BlurredImgProps = {}
 
-	return {
-		props: {
-			imgBase64,
-			imgSrc,
-		},
+	for (const imageId of imageIds) {
+		const imgSrc = `/images/home/${imageId}`
+		const img = await getImage(imgSrc)
+		const imgBase64 = await getBase64(img)
+		props[imageId] = { imgBase64, imgSrc }
 	}
+
+	return { props }
 }
 
-const IndexPage: React.FC<HeroPageProps> = ({ imgBase64, imgSrc }) => {
+const IndexPage: React.FC<BlurredImgProps> = (imgs) => {
 	return (
 		<>
 			<NextSeo titleTemplate="%s" title={SITE_NAME} />
-			<Landing imgBase64={imgBase64} imgSrc={imgSrc} />
+			<Landing
+				imgBase64={imgs["landing.jpg"].imgBase64}
+				imgSrc={imgs["landing.jpg"].imgSrc}
+			/>
 			{/* <Numbers /> */}
-			<Introduction />
+			<Introduction
+				imgBase64s={{
+					partners: imgs["partners.jpeg"].imgBase64,
+					students: imgs["students.jpeg"].imgBase64,
+				}}
+				imgSrcs={{
+					partners: imgs["partners.jpeg"].imgSrc,
+					students: imgs["students.jpeg"].imgSrc,
+				}}
+			/>
 
 			{/* <Numbers />
 			<Introduction /> */}
