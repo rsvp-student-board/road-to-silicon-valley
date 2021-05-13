@@ -2,11 +2,17 @@ import { fade, makeStyles } from "@material-ui/core/styles"
 
 const useLandingStyles = makeStyles((theme) => ({
 	root: {
-		height: "60vh",
+		height: "80vh",
 		width: "100%",
 		"& .react-parallax-background-children": {
 			width: "100%",
 			height: "100%",
+		},
+		[theme.breakpoints.up("sm")]: {
+			height: "90vh",
+		},
+		[theme.breakpoints.up("md")]: {
+			height: "100vh",
 		},
 	},
 	background: {
@@ -31,38 +37,76 @@ const useLandingStyles = makeStyles((theme) => ({
 	content: {
 		display: "flex",
 		flexDirection: "column",
-		justifyContent: "center",
 		alignItems: "center",
 		width: "100%",
 		height: "100%",
-		textAlign: "center",
 		color: theme.palette.common.white,
-		textShadow: `2px 2px 6px ${fade(theme.palette.common.black, 0.4)}`,
-		backgroundColor: fade(theme.palette.common.black, 0.6),
+		textShadow: `2px 2px 6px ${fade(theme.palette.common.black, 1)}`,
+		background:
+			`linear-gradient(to bottom, ${fade(
+				theme.palette.common.black,
+				0.675
+			)} 75%, ${theme.palette.common.black})` ||
+			fade(theme.palette.common.black, 0.675),
+	},
+	container: {
+		paddingLeft: theme.spacing(4),
+		paddingRight: theme.spacing(4),
+		position: "relative",
+		marginTop: 265,
+		[theme.breakpoints.up("md")]: {
+			paddingLeft: theme.spacing(10),
+		},
 	},
 	title: {
-		fontWeight: 450,
-		fontSize: "calc(3rem + 2.5vw)",
-		fontVariant: "small-caps",
-		letterSpacing: 1,
-		lineHeight: 1.1,
+		fontWeight: 400,
+		lineHeight: 1,
+		fontSize: "calc(2rem + 3vw)",
+		// color: theme.palette.primary.main,
 		marginBottom: theme.spacing(1.5),
+		marginTop: theme.spacing(-6),
+		[theme.breakpoints.up("sm")]: {
+			fontSize: theme.typography.fontSize * 5,
+			marginBottom: theme.spacing(3),
+		},
 	},
 	subtitle: {
-		fontWeight: "normal",
-		fontSize: "calc(1.5rem + 1.5vw)",
-		fontStyle: "italic",
+		fontWeight: 700,
+		fontSize: theme.typography.fontSize * 1.25,
+		color: theme.palette.primary.main,
+		textTransform: "uppercase",
 		fontFamily: theme.typography.body1.fontFamily,
+		letterSpacing: 1,
+		"& span": {
+			display: "none",
+		},
+		[theme.breakpoints.up("sm")]: {
+			fontSize: theme.typography.fontSize * 1.75,
+			"& span": {
+				display: "inline-block",
+			},
+		},
 	},
-	paper: {
-		width: "90%",
-		maxWidth: theme.breakpoints.values.sm,
-		padding: theme.spacing(4),
+	excerptContainer: {
+		maxWidth: `min(calc(100vw - ${theme.spacing(8)}px), 600px)`,
 		position: "absolute",
-		top: "100%",
-		left: "50%",
-		transform: "translate(-50%, -50%)",
-		zIndex: 999,
+		top: 175,
+		marginLeft: 0,
+		[theme.breakpoints.up("sm")]: {
+			top: 300,
+		},
+	},
+	excerpt: {
+		fontSize: theme.typography.fontSize + 2,
+		[theme.breakpoints.up("sm")]: {
+			fontSize: theme.typography.fontSize * 1.25,
+		},
+	},
+	buffer: {
+		display: "none",
+		[theme.breakpoints.up("md")]: {
+			display: "block",
+		},
 	},
 }))
 

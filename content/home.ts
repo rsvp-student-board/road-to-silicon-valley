@@ -8,11 +8,11 @@ export const NUMBERS: Number[] = [
 	},
 	{
 		number: 104,
-		title: "Active Members",
+		title: "Active Cohort Members",
 	},
 	{
 		number: 15,
-		title: "Board Members",
+		title: "Student Board Members",
 	},
 	{
 		number: 12,

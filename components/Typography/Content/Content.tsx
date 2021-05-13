@@ -1,3 +1,4 @@
+import clsx from "clsx"
 import { Children, cloneElement, ReactElement } from "react"
 import useContentStyles from "./Content.styles"
 
@@ -5,7 +6,7 @@ const Content: React.FC = ({ children }) => {
 	const classes = useContentStyles()
 
 	const addMarginBottom = (child: ReactElement) => {
-		const className = `${child.props.className || ""} ${classes.item}`
+		const className = clsx(child.props.className, classes.item)
 
 		return cloneElement(child, { className })
 	}

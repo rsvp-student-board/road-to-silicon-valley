@@ -1,4 +1,4 @@
-import { Introduction, Landing, Numbers } from "@/components/Home"
+import { Introduction, Landing } from "@/components/Home"
 import { SITE_NAME } from "@/constants"
 import { getBase64 } from "@plaiceholder/base64"
 import { getImage } from "@plaiceholder/next"
@@ -24,8 +24,11 @@ const IndexPage: React.FC<HeroPageProps> = ({ imgBase64, imgSrc }) => {
 		<>
 			<NextSeo titleTemplate="%s" title={SITE_NAME} />
 			<Landing imgBase64={imgBase64} imgSrc={imgSrc} />
-			<Numbers />
+			{/* <Numbers /> */}
 			<Introduction />
+
+			{/* <Numbers />
+			<Introduction /> */}
 		</>
 	)
 }

@@ -26,7 +26,7 @@ const useNavbarStyles = makeStyles((theme) => ({
 	},
 	toolbar: {
 		justifyContent: "space-between",
-		maxWidth: theme.breakpoints.values.lg,
+		maxWidth: theme.breakpoints.values.lg * 1.2,
 		width: "100%",
 	},
 	logo: {
@@ -48,7 +48,7 @@ const useNavbarStyles = makeStyles((theme) => ({
 		},
 	},
 	drawer: {
-		padding: `${theme.spacing(1) + 88}px ${theme.spacing(
+		padding: `${theme.spacing(8) + 88}px ${theme.spacing(
 			3.5
 		)}px ${theme.spacing(2)}px`,
 		backgroundColor: theme.palette.common.black,

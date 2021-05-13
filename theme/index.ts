@@ -13,7 +13,7 @@ const theme = createMuiTheme({
 			secondary: "#B3B3B3",
 		},
 		background: {
-			default: "#F9F9F9",
+			default: "#f1f1f1",
 			paper: "#FDFDFD",
 		},
 		common: {
@@ -69,8 +69,8 @@ const theme = createMuiTheme({
 	},
 	props: {
 		MuiButton: {
-			// disableElevation: true,
-			disableRipple: true,
+			disableElevation: true,
+			variant: "outlined",
 		},
 	},
 	overrides: {
@@ -83,16 +83,6 @@ const theme = createMuiTheme({
 				body: {
 					scrollBehavior: "smooth",
 				},
-			},
-		},
-		MuiButton: {
-			root: {
-				fontSize: 16,
-				letterSpacing: 1,
-				fontWeight: 400,
-			},
-			outlined: {
-				padding: "10px 20px",
 			},
 		},
 	},
