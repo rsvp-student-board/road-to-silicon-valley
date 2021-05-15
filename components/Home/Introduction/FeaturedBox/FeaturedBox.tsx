@@ -45,6 +45,7 @@ const FeaturedBox: React.FC<FeaturedBoxProps> = ({
 				layout="fill"
 				src={imgSrc}
 				objectFit="cover"
+				quality={30}
 				className={classes.image}
 			/>
 			<Box

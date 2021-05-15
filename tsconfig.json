@@ -33,6 +33,6 @@
     "**/*.ts",
     "**/*.tsx",
     "@types/svg.d.ts",
-    "@types/index.d.ts"
-  ]
+    "@types/index.d.ts", 
+    "pages/api/*"  ]
 }

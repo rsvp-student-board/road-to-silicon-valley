@@ -9,7 +9,7 @@ const useFeaturedBoxStyles = makeStyles((theme) => ({
 		height: "100%",
 		"&:hover": {
 			"& $image": {
-				filter: "blur(2px)",
+				filter: "blur(4px)",
 			},
 			"& $overlay": {
 				backgroundColor: fade(theme.palette.common.black, 0.3),

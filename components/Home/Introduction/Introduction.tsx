@@ -7,16 +7,9 @@ import Button from "@/components/Button"
 import { ContentContainer } from "@/components/Layout"
 import { Content } from "@/components/Typography"
 // import Logo from "@/images/logo.svg"
-import {
-	Box,
-	Container,
-	Grid,
-	Theme,
-	Typography,
-	useMediaQuery,
-} from "@material-ui/core"
+import { Box, Grid, Theme, Typography, useMediaQuery } from "@material-ui/core"
 import { DONATION_URL } from "constants/contact"
-import { DISCIPLINES } from "content/about"
+import Calendar from "./Calendar"
 import FeaturedBox from "./FeaturedBox"
 import useIntroductionStyles from "./Introduction.styles"
 
@@ -126,50 +119,11 @@ const Introduction: React.FC<IntroductionProps> = ({ imgBase64s, imgSrcs }) => {
 						</Grid>
 					</Grid>
 				</Grid>
+				<Grid item xs={12}>
+					<Calendar />
+				</Grid>
 
 				{/* <Grid item xs={12}>
-					<Content>
-						<Typography variant="body1">
-							The Road to Silicon V/Alley Program (RSVP) leverages Rutgers’
-							world class academic resources and prime geographical location to
-							establish a new hub of innovation, learning, and collaboration
-							between existing innovation hubs from coast to coast.
-						</Typography>
-						<Typography variant="body1">
-							Housed and led by Rutgers Business School, RSVP invites RU
-							students of all disciplines to enhance their education through a
-							curriculum designed to prepare them for corporate leadership in
-							innovation (intrapreneurship) and entrepreneurship in a digital
-							age.
-						</Typography>
-						<Typography variant="body1">
-							In addition to its program elements, RSVP connects enterprising
-							students, faculty, alumni and corporate partners to share ideas,
-							investment opportunities, and intellectual capital. Students will
-							have access to a network of mentors and specialized job and
-							internship placement. Corporate partners will have access to a
-							talented and prepared pipeline of RU intrapreneurs, innovators,
-							and creatives with a strong balance of technical skills, business
-							acumen, and critical soft success skills. Corporate partners can
-							collaborate in new curriculum design and the development of
-							innovation labs, incubators, accelerators, and institutes.
-						</Typography>
-						<Typography variant="body1">
-							Interested in getting involved with RSVP? If you are a student,
-							check out the{" "}
-							<Link href="/recruitment" passHref>
-								<Hyperlink>recruitment</Hyperlink>
-							</Link>{" "}
-							page to see how to become a member of RSVP's next cohort.
-							Otherwise, take a look at the{" "}
-							<Link href="/involvement" passHref>
-								<Hyperlink>involvement opportunities</Hyperlink>
-							</Link>{" "}
-							available to you!
-						</Typography>
-					</Content>
-				</Grid> */}
-				<Grid item xs={12}>
 					<Container maxWidth="sm">
 						<Grid container spacing={1}>
 							{DISCIPLINES.map((discipline, index) => (
@@ -192,7 +146,7 @@ const Introduction: React.FC<IntroductionProps> = ({ imgBase64s, imgSrcs }) => {
 							))}
 						</Grid>
 					</Container>
-				</Grid>
+				</Grid> */}
 				<Grid item xs={12}>
 					<Box textAlign="center" width="100%">
 						<Button
