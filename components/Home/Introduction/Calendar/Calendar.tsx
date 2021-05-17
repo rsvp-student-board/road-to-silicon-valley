@@ -18,16 +18,13 @@ const Calendar: React.FC = () => {
 
 	const classes = useCalendarStyles()
 
-	if (error) return <div>Failed to load users</div>
-	if (!events) return <div>Loading...</div>
-
 	return (
 		<>
 			{/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
 
 			<BigCalendar
 				localizer={localizer}
-				events={events}
+				events={!error && events ? events : []}
 				titleAccessor={(event: Event) => event.summary || ""}
 				startAccessor={(event: Event) =>
 					new Date(event.start?.dateTime || event.start?.date || Date.now())

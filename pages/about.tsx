@@ -5,7 +5,7 @@ import {
 } from "@/components/About"
 import { HeroLayout } from "@/components/Layout"
 import { Content, Header, Hyperlink } from "@/components/Typography"
-import { WHAT_IS_RSVP } from "@/content"
+import { NUMBERS, WHAT_IS_RSVP } from "@/content"
 import { Grid, Typography } from "@material-ui/core"
 import { getBase64 } from "@plaiceholder/base64"
 import { getImage } from "@plaiceholder/next"
@@ -48,6 +48,12 @@ const AboutPage: React.FC<AboutPageProps> = ({
 			imgBase64={imgBase64}
 			imgSrc={imgSrc}
 			imgPosition="center 65%"
+			content={{
+				description:
+					"Eu amet proident laborum velit occaecat officia labore qui. Nulla voluptate culpa laborum ullamco est in. Eiusmod irure sint et cupidatat non adipisicing. Veniam qui voluptate est deserunt. Nostrud officia aute ullamco eu ut occaecat enim sunt duis do deserunt Lorem minim exercitation.",
+				subtitle: "About RSVP",
+				numbers: [NUMBERS[0], NUMBERS[1]],
+			}}
 		>
 			<Grid item xs={12}>
 				<Header>What is RSVP?</Header>

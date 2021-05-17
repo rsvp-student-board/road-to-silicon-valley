@@ -2,15 +2,11 @@ import { fade, makeStyles } from "@material-ui/core/styles"
 
 const useHeroStyles = makeStyles((theme) => ({
 	root: {
-		height: "30vh",
 		width: "100%",
-		background: theme.palette.primary.main,
+		background: theme.palette.common.black,
 		"& .react-parallax-background-children": {
 			width: "100%",
 			height: "100%",
-		},
-		[theme.breakpoints.up("md")]: {
-			height: "45vh",
 		},
 	},
 	background: {
@@ -18,36 +14,6 @@ const useHeroStyles = makeStyles((theme) => ({
 		width: "100%",
 		position: "relative",
 		overflow: "hidden",
-	},
-	content: {
-		display: "flex",
-		flexDirection: "column",
-		justifyContent: "center",
-		alignItems: "center",
-		width: "100%",
-		height: "100%",
-		textShadow: `2px 2px 6px ${fade(theme.palette.common.black, 0.4)}`,
-		backgroundColor: fade(theme.palette.common.black, 0.6),
-		padding: `0 ${theme.spacing(2.5)}px`,
-		[theme.breakpoints.up("lg")]: {
-			padding: `0 ${theme.spacing(2)}px`,
-		},
-	},
-	title: {
-		color: theme.palette.common.white,
-		fontWeight: 450,
-		textTransform: "uppercase",
-		letterSpacing: 1,
-		fontSize: theme.typography.fontSize * 2.75,
-		[theme.breakpoints.up("sm")]: {
-			fontSize: theme.typography.fontSize * 4,
-		},
-		[theme.breakpoints.up("md")]: {
-			fontSize: theme.typography.fontSize * 5,
-		},
-		[theme.breakpoints.up("lg")]: {
-			fontSize: theme.typography.fontSize * 6,
-		},
 	},
 	blurredImage: {
 		position: "absolute",
@@ -61,6 +27,61 @@ const useHeroStyles = makeStyles((theme) => ({
 		objectPosition: "center",
 		filter: "blur(2rem)",
 		transform: "scale(1.2)",
+	},
+	content: {
+		width: "100%",
+		minHeight: "auto",
+		height: "auto",
+		display: "flex",
+		alignItems: "center",
+		textShadow: `2px 2px 6px ${fade(theme.palette.common.black, 0.4)}`,
+		backgroundColor: fade(theme.palette.common.black, 0.6),
+		paddingTop: theme.spacing(15),
+		paddingBottom: theme.spacing(10),
+		[theme.breakpoints.up("sm")]: {
+			minHeight: 500,
+		},
+		[theme.breakpoints.up("md")]: {
+			minHeight: 700,
+		},
+	},
+	title: {
+		color: theme.palette.common.white,
+		fontWeight: 400,
+		letterSpacing: 1,
+		fontSize: theme.typography.fontSize * 5,
+	},
+	subtitle: {
+		fontFamily: theme.typography.body1.fontFamily,
+		textTransform: "uppercase",
+		fontSize: theme.typography.fontSize,
+		letterSpacing: 1,
+		fontWeight: 400,
+	},
+	description: {
+		marginTop: theme.spacing(3.5),
+		maxWidth: 700,
+		fontSize: theme.typography.fontSize * 1.25,
+	},
+	numbersGrid: {
+		marginTop: theme.spacing(6),
+	},
+	numberGridItem: {
+		borderLeft: `1px solid ${fade(theme.palette.common.white, 0.3)}`,
+		paddingLeft: theme.spacing(2),
+		paddingBottom: theme.spacing(4),
+	},
+	numberCounter: {
+		fontSize: theme.typography.fontSize * 2.5,
+		fontWeight: 300,
+		color: theme.palette.primary.main,
+	},
+	numberTitle: {
+		marginTop: theme.spacing(-0.5),
+
+		fontSize: theme.typography.fontSize,
+		fontWeight: 500,
+		textTransform: "uppercase",
 	},
 }))
 

@@ -14,7 +14,7 @@ const useCalendarEventStyles = makeStyles((theme) => ({
 		fontSize: theme.typography.fontSize,
 	},
 	title: {
-		fontSize: theme.typography.fontSize * 1.5,
+		fontSize: theme.typography.fontSize * 2,
 		fontWeight: 500,
 		borderLeft: `5px solid ${theme.palette.secondary.main}`,
 		paddingLeft: theme.spacing(2),
@@ -23,7 +23,7 @@ const useCalendarEventStyles = makeStyles((theme) => ({
 	closeButton: {
 		position: "absolute",
 		right: theme.spacing(1),
-		top: theme.spacing(0.75),
+		top: theme.spacing(1),
 		color: theme.palette.grey[500],
 	},
 	content: {
