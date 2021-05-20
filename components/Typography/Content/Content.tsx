@@ -1,8 +1,13 @@
+import { Header } from "@/components/Typography"
 import clsx from "clsx"
 import { Children, cloneElement, ReactElement } from "react"
 import useContentStyles from "./Content.styles"
 
-const Content: React.FC = ({ children }) => {
+interface ContentProps {
+	header?: string
+}
+
+const Content: React.FC<ContentProps> = ({ children, header }) => {
 	const classes = useContentStyles()
 
 	const addMarginBottom = (child: ReactElement) => {
@@ -13,6 +18,7 @@ const Content: React.FC = ({ children }) => {
 
 	return (
 		<section className={classes.root}>
+			{header && <Header>{header}</Header>}
 			{Children.map(children, (child) =>
 				addMarginBottom(child as ReactElement)
 			)}

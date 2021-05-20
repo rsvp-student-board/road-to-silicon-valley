@@ -5,7 +5,7 @@ import {
 	HiOutlineLightBulb,
 } from "react-icons/hi"
 import { IoBusinessOutline } from "react-icons/io5"
-import { Discipline, InvolvementOpportunity } from "./interfaces"
+import { Discipline, InvolvementOpportunity, Offer } from "./interfaces"
 
 export const WHAT_IS_RSVP = [
 	"The Road to Silicon V/Alley Program (RSVP) paves the way for students to become leaders in innovation (intrapreneurship) and entrepreneurship in a digital age. Rutgers Business School is working with university partners to be at the forefront of enhancing the educational opportunities for students across Rutgers University.",
@@ -36,11 +36,60 @@ export const DISCIPLINES: Array<Discipline> = [
 	},
 ]
 
-export const MISSION =
-	"Empowering Rutgers students to create pathways to leadership opportunities at innovative companies and pursue entrepreneurial ambitions."
-
-export const MISSION_DESCRIPTION =
-	'A considerable number of entrepreneurial and technology-based firms look to Rutgers University for their talent recruitment, but RSVP recognizes that the presence of Rutgers students in these industries can be even more substantial. This organization aims to capitalize on the potential of Rutgers students and maximize innovation and technological skill on campus. The slash between the V and the A in "Road to Silicon V/Alley" signifies the widespread nature of the entrepreneurial hubs in America, ranging from the west coast (Silicon Valley) to the east coast (Silicon Alley) — RSVP wants to ensure that Rutgers students have the ability to make an impact anywhere in this spectrum.'
+export const WHAT_RSVP_OFFERS: Array<Offer> = [
+	{
+		title: "To Students",
+		items: [
+			{
+				title: "Access to experiential learning",
+				note: "Technology acumen, business acumen, success skills, intrapreneurship, entrepreneurship",
+			},
+			{
+				title: "Industry and alumni networks",
+			},
+			{
+				title: "Career advancement",
+				note: "Internships, co-ops, and full-time positions",
+			},
+			{
+				title: "Funding",
+				note: "Ideas, projects, and ventures",
+			},
+			{
+				title: "Connections with like-minded peers",
+			},
+			{
+				title: "Key skills and tool training",
+				note: "Interview prep, resume reviews",
+			},
+		],
+	},
+	{
+		title: "To Partners",
+		items: [
+			{
+				title: "Pipeline to top-talent and industry-ready students",
+			},
+			{
+				title: "Opportunity to join Advisory Board",
+				note: "Involvement in curriculum design, mentorship program, etc.",
+			},
+			{
+				title: "Opportunity to support RSVP initiatives",
+			},
+			{
+				title: "Sponsorship and marketing",
+			},
+			{
+				title:
+					"Network of top firms, industry experts, and public/private partners",
+			},
+			{
+				title: "Access to investment opportunities",
+			},
+		],
+	},
+]
 
 export const INVOLVEMENT_OPPORTUNITIES: Array<InvolvementOpportunity> = [
 	{

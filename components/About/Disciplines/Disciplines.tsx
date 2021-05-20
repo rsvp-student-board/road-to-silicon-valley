@@ -7,15 +7,16 @@ const Disciplines: React.FC = () => {
 
 	return (
 		<Container maxWidth="sm">
-			<Grid container spacing={4} justify="center">
+			<Grid container spacing={1}>
 				{DISCIPLINES.map((discipline, index) => (
-					<Grid item xs={12} sm={6} key={`discipline-${index}`}>
-						<div className={classes.icon}>{discipline.icon}</div>
-						<Typography
-							variant="body1"
-							align="center"
-							className={classes.title}
-						>
+					<Grid
+						item
+						xs={index === Math.floor(DISCIPLINES.length / 2) ? 12 : 6}
+						className={classes.disciplineGridItem}
+						key={`discipline ${discipline.title}`}
+					>
+						<div className={classes.disciplineIcon}>{discipline.icon}</div>
+						<Typography variant="body1" className={classes.disciplineTitle}>
 							{discipline.title}
 						</Typography>
 					</Grid>

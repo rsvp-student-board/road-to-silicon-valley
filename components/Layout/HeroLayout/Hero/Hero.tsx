@@ -35,14 +35,13 @@ const Hero: React.FC<HeroProps> = ({
 			<Background>
 				<img
 					aria-hidden="true"
-					alt={SITE_NAME}
+					alt={`${title} – ${SITE_NAME}`}
 					src={imgBase64}
 					className={classes.blurredImage}
 				/>
 				<Image
 					src={imgSrc}
-					alt={SITE_NAME}
-					title={SITE_NAME}
+					alt={`${title} – ${SITE_NAME}`}
 					layout="fill"
 					objectFit="cover"
 					objectPosition={imgPosition || "center center"}
@@ -65,6 +64,7 @@ const Hero: React.FC<HeroProps> = ({
 					<Typography variant="h1" className={classes.title}>
 						{title}
 					</Typography>
+
 					{content?.description && (
 						<Typography variant="body1" className={classes.description}>
 							{content.description}
@@ -80,7 +80,7 @@ const Hero: React.FC<HeroProps> = ({
 									className={classes.numberGridItem}
 									key={`hero-${numberItem.title}-number`}
 								>
-									<Typography variant="body1">
+									<Typography variant="body1" className={classes.numberCounter}>
 										<CountUp
 											start={0}
 											end={numberItem.number}

@@ -45,23 +45,24 @@ const useHeroStyles = makeStyles((theme) => ({
 			minHeight: 700,
 		},
 	},
+
 	title: {
 		color: theme.palette.common.white,
-		fontWeight: 400,
+		fontWeight: 500,
 		letterSpacing: 1,
-		fontSize: theme.typography.fontSize * 5,
+		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 5.25),
 	},
 	subtitle: {
 		fontFamily: theme.typography.body1.fontFamily,
 		textTransform: "uppercase",
-		fontSize: theme.typography.fontSize,
+		fontSize: theme.typography.pxToRem(theme.typography.fontSize),
 		letterSpacing: 1,
 		fontWeight: 400,
 	},
 	description: {
 		marginTop: theme.spacing(3.5),
-		maxWidth: 700,
-		fontSize: theme.typography.fontSize * 1.25,
+		maxWidth: 600,
+		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 1.25),
 	},
 	numbersGrid: {
 		marginTop: theme.spacing(6),
@@ -69,17 +70,16 @@ const useHeroStyles = makeStyles((theme) => ({
 	numberGridItem: {
 		borderLeft: `1px solid ${fade(theme.palette.common.white, 0.3)}`,
 		paddingLeft: theme.spacing(2),
-		paddingBottom: theme.spacing(4),
+		paddingBottom: theme.spacing(3.5),
 	},
 	numberCounter: {
-		fontSize: theme.typography.fontSize * 2.5,
+		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 2.5),
 		fontWeight: 300,
 		color: theme.palette.primary.main,
 	},
 	numberTitle: {
 		marginTop: theme.spacing(-0.5),
-
-		fontSize: theme.typography.fontSize,
+		fontSize: theme.typography.pxToRem(theme.typography.fontSize),
 		fontWeight: 500,
 		textTransform: "uppercase",
 	},

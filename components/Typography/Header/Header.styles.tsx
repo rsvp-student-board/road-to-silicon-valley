@@ -2,14 +2,15 @@ import { makeStyles } from "@material-ui/core/styles"
 
 const useHeaderStyles = makeStyles((theme) => ({
 	header: {
-		marginBottom: theme.spacing(1.5),
-		fontSize: theme.typography.fontSize * 2.5,
-		fontWeight: 400,
-	},
-	divider: {
-		width: 60,
-		border: `1px solid ${theme.palette.text.primary}`,
-		margin: `0 0 ${theme.spacing(3)}px`,
+		fontWeight: 600,
+		lineHeight: 1,
+		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 3),
+		marginBottom: theme.spacing(2.5),
+		borderLeft: `${theme.spacing(1)}px solid transparent`,
+		marginLeft: theme.spacing(-1),
+		paddingTop: theme.spacing(1),
+		paddingBottom: theme.spacing(1),
+		transition: theme.transitions.create(["border-color", "padding", "margin"]),
 	},
 }))
 

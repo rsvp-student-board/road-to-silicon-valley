@@ -28,7 +28,6 @@ const IndexPage: React.FC<BlurredImgProps> = (imgs) => {
 				imgBase64={imgs["landing.jpg"].imgBase64}
 				imgSrc={imgs["landing.jpg"].imgSrc}
 			/>
-			{/* <Numbers /> */}
 			<Introduction
 				imgBase64s={{
 					partners: imgs["partners.jpeg"].imgBase64,
@@ -39,9 +38,6 @@ const IndexPage: React.FC<BlurredImgProps> = (imgs) => {
 					students: imgs["students.jpeg"].imgSrc,
 				}}
 			/>
-
-			{/* <Numbers />
-			<Introduction /> */}
 		</>
 	)
 }

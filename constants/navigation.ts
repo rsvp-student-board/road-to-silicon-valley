@@ -5,19 +5,6 @@ export const NAV_ITEMS: NavItem[] = [
 		path: "/about",
 	},
 	{
-		title: "Students",
-		sublist: [
-			{
-				title: "Active Members",
-				path: "/members",
-			},
-			{
-				title: "Notable Alumni",
-				path: "/alumni",
-			},
-		],
-	},
-	{
 		title: "Get Involved",
 		sublist: [
 			{
@@ -30,6 +17,20 @@ export const NAV_ITEMS: NavItem[] = [
 			},
 		],
 	},
+	{
+		title: "Students",
+		sublist: [
+			{
+				title: "Active Members",
+				path: "/members",
+			},
+			{
+				title: "Notable Alumni",
+				path: "/alumni",
+			},
+		],
+	},
+
 	{
 		title: "Leadership",
 		sublist: [

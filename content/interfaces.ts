@@ -14,6 +14,14 @@ export interface Discipline {
 	icon: JSX.Element
 }
 
+export interface Offer {
+	title: string
+	items: {
+		title: string
+		note?: string
+	}[]
+}
+
 export interface InvolvementOpportunity {
 	title: string
 	description: string

@@ -1,7 +1,7 @@
+import ContentContainer from "@/components/Layout/ContentContainer"
+import Hero from "@/components/Layout/HeroLayout/Hero"
 import { Box } from "@material-ui/core"
 import { NextSeo } from "next-seo"
-import ContentContainer from "../ContentContainer"
-import Hero from "./Hero/Hero"
 
 type HeroLayoutProps = {
 	imgBase64: string
@@ -15,7 +15,10 @@ type HeroLayoutProps = {
 } & (
 	| { title: string; heroTitle?: never; seoTitle?: never }
 	| { title?: never; heroTitle: string; seoTitle: string }
-)
+) & {
+		boxClassName?: string
+		containerClassName?: string
+	}
 
 const HeroLayout: React.FC<HeroLayoutProps> = ({
 	title,
@@ -26,6 +29,8 @@ const HeroLayout: React.FC<HeroLayoutProps> = ({
 	seoTitle,
 	children,
 	content,
+	boxClassName,
+	containerClassName,
 }) => {
 	return (
 		<>
@@ -38,7 +43,12 @@ const HeroLayout: React.FC<HeroLayoutProps> = ({
 					imgSrc={imgSrc}
 					imgPosition={imgPosition}
 				/>
-				<ContentContainer>{children}</ContentContainer>
+				<ContentContainer
+					boxClassName={boxClassName}
+					containerClassName={containerClassName}
+				>
+					{children}
+				</ContentContainer>
 			</Box>
 		</>
 	)

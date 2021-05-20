@@ -115,7 +115,7 @@ const useNavItemStyles = makeStyles((theme) => ({
 			maxHeight: () => "none",
 			width: () => "auto",
 			top: "100%",
-			left: -20,
+			left: -10,
 			zIndex: 10000,
 			paddingTop: theme.spacing(2.5),
 			paddingBottom: theme.spacing(1),
