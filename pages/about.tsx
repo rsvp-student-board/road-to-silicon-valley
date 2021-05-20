@@ -1,10 +1,10 @@
 import { Mission, OfferList } from "@/components/About"
 import { HeroLayout } from "@/components/Layout"
 import { Content } from "@/components/Typography"
+import { WHAT_RSVP_OFFERS } from "@/content"
 import { Grid, Typography } from "@material-ui/core"
 import { getBase64 } from "@plaiceholder/base64"
 import { getImage } from "@plaiceholder/next"
-import { WHAT_RSVP_OFFERS } from "content/about"
 import { GetStaticProps } from "next"
 import { BlurredImgProps } from "./_app"
 
