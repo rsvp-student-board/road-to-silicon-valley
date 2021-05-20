@@ -1,4 +1,4 @@
-import { OfferList } from "@/components/About"
+import { Mission } from "@/components/About"
 import { HeroLayout } from "@/components/Layout"
 import { Content } from "@/components/Typography"
 import { WHAT_RSVP_OFFERS } from "@/content"
@@ -35,7 +35,7 @@ const AboutPage: React.FC<BlurredImgProps> = (imgs) => {
 					"The Road to Silicon V/Alley Program (RSVP) paves the way for students to become leaders in innovation (intrapreneurship) and entrepreneurship in a digital age. This organization aims to capitalize on the potential of Rutgers students and maximize innovation and technological skill on campus.",
 			}}
 		>
-			{/* <Mission /> */}
+			<Mission />
 			<Grid item xs={12}>
 				<Content header="Overview">
 					<Typography variant="body1">
@@ -68,7 +68,7 @@ const AboutPage: React.FC<BlurredImgProps> = (imgs) => {
 					<Grid container spacing={3}>
 						{WHAT_RSVP_OFFERS.map((offer) => (
 							<Grid item xs={12} sm={6} key={`offer-list-${offer.title}`}>
-								<OfferList offer={offer} />
+								{/* <OfferList offer={offer} /> */}
 							</Grid>
 						))}
 					</Grid>
