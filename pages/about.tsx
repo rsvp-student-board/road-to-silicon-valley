@@ -3,29 +3,33 @@ import { HeroLayout } from "@/components/Layout"
 import { Content } from "@/components/Typography"
 import { WHAT_RSVP_OFFERS } from "@/content"
 import { Grid, Typography } from "@material-ui/core"
+import { getBase64 } from "@plaiceholder/base64"
+import { getImage } from "@plaiceholder/next"
+import { GetStaticProps } from "next"
 import { BlurredImgProps } from "./_app"
 
-// export const getStaticProps: GetStaticProps = async () => {
-// 	const imageIds = ["hero.jpeg"]
-// 	const props: BlurredImgProps = {}
+export const getStaticProps: GetStaticProps = async () => {
+	const imageIds = ["hero.jpeg"]
+	const props: BlurredImgProps = {}
 
-// 	for (const imageId of imageIds) {
-// 		const imgSrc = `/images/about/${imageId}`
-// 		const img = await getImage(imgSrc)
-// 		const imgBase64 = await getBase64(img)
-// 		props[imageId] = { imgBase64, imgSrc }
-// 	}
+	for (const imageId of imageIds) {
+		const imgSrc = `/images/about/${imageId}`
+		const img = await getImage(imgSrc)
+		const imgBase64 = await getBase64(img)
+		props[imageId] = { imgBase64, imgSrc }
+	}
 
-// 	return { props }
-// }
+	return { props }
+}
 
-const AboutPage: React.FC<BlurredImgProps> = () => {
+const AboutPage: React.FC<BlurredImgProps> = (imgs) => {
+	console.log(imgs)
 	return (
 		<HeroLayout
 			seoTitle="About"
 			heroTitle="About RSVP"
-			imgBase64="/images/about/hero.jpeg"
-			imgSrc="/images/about/hero.jpeg"
+			imgBase64={imgs["hero.jpeg"].imgBase64}
+			imgSrc={imgs["hero.jpeg"].imgSrc}
 			imgPosition="center 65%"
 			content={{
 				description:
