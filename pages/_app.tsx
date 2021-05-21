@@ -2,6 +2,7 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import theme from "@/theme"
 import { CssBaseline, ThemeProvider } from "@material-ui/core"
+import { Base64 } from "@plaiceholder/base64"
 import { DefaultSeo } from "next-seo"
 import { AppProps } from "next/app"
 import { useEffect } from "react"
@@ -33,7 +34,7 @@ export default App
 
 export interface BlurredImgProps {
 	[key: string]: {
-		imgBase64: string
+		imgBase64: Base64
 		imgSrc: string
 	}
 }

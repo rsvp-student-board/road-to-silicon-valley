@@ -12,8 +12,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	for (const imageId of imageIds) {
 		const imgSrc = `/images/home/${imageId}`
-		const img = await getImage(imgSrc)
-		const imgBase64 = await getBase64(img)
+		const imgFile = await getImage(imgSrc)
+		const imgBase64 = await getBase64(imgFile)
 		props[imageId] = { imgBase64, imgSrc }
 	}
 

@@ -36,12 +36,13 @@ const useHeroStyles = makeStyles((theme) => ({
 		alignItems: "center",
 		textShadow: `2px 2px 6px ${fade(theme.palette.common.black, 0.4)}`,
 		backgroundColor: fade(theme.palette.common.black, 0.6),
-		paddingTop: theme.spacing(15),
+		paddingTop: theme.spacing(18),
 		paddingBottom: theme.spacing(10),
 		[theme.breakpoints.up("sm")]: {
 			minHeight: 500,
 		},
 		[theme.breakpoints.up("md")]: {
+			paddingTop: theme.spacing(15),
 			minHeight: 700,
 		},
 	},
@@ -50,7 +51,11 @@ const useHeroStyles = makeStyles((theme) => ({
 		color: theme.palette.common.white,
 		fontWeight: 500,
 		letterSpacing: 1,
-		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 5.25),
+		lineHeight: 1,
+		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 4),
+		[theme.breakpoints.up("md")]: {
+			fontSize: theme.typography.pxToRem(theme.typography.fontSize * 5.25),
+		},
 	},
 	subtitle: {
 		fontFamily: theme.typography.body1.fontFamily,

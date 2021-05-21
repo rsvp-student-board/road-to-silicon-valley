@@ -16,6 +16,7 @@ const useMembershipBenefitsStyles = makeStyles((theme) => ({
 		padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
 		position: "relative",
 		marginBottom: theme.spacing(1.5),
+		overflow: "hidden",
 		"&:hover": {
 			"& $icon": {
 				color: theme.palette.secondary.main,
@@ -28,6 +29,8 @@ const useMembershipBenefitsStyles = makeStyles((theme) => ({
 		fontStyle: "italic",
 		padding: `0 ${theme.spacing(1)}px`,
 		margin: `${theme.spacing(2.25)}px 0`,
+		position: "relative",
+		zIndex: 99,
 	},
 	description: {
 		padding: `${theme.spacing(1)}px ${theme.spacing(1)}px 
@@ -35,10 +38,12 @@ const useMembershipBenefitsStyles = makeStyles((theme) => ({
 	},
 	icon: {
 		position: "absolute",
+		zIndex: 98,
 		top: theme.spacing(1.5),
 		right: theme.spacing(2.5),
 		color: theme.palette.primary.main,
-		fontSize: theme.typography.fontSize * 3,
+		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 3),
+		opacity: 0.4,
 		transition: theme.transitions.create("color"),
 	},
 }))
