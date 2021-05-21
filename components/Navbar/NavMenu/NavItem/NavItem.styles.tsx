@@ -10,15 +10,25 @@ const useNavItemStyles = makeStyles((theme) => ({
 	directLink: {
 		display: "inline-block",
 		textDecoration: "none",
+		marginBottom: theme.spacing(2),
+
 		transition: theme.transitions.create("transform"),
 		"&:hover, &:focus": {
 			textDecoration: "none",
+		},
+		[theme.breakpoints.up("md")]: {
+			margin: theme.spacing(1),
+		},
+	},
+	dropdownItem: {
+		marginBottom: theme.spacing(2),
+		[theme.breakpoints.up("md")]: {
+			margin: theme.spacing(1),
 		},
 	},
 	container: {
 		padding: `${theme.spacing(1)}px ${theme.spacing(1) - 1}px 
 					${theme.spacing(1)}px ${theme.spacing(1)}px`,
-		marginBottom: theme.spacing(2),
 		position: "relative",
 		zIndex: 10001,
 		cursor: () => "pointer",
@@ -45,7 +55,6 @@ const useNavItemStyles = makeStyles((theme) => ({
 			},
 		},
 		[theme.breakpoints.up("md")]: {
-			margin: theme.spacing(1),
 			display: "block",
 			cursor: (props: NavItemStylesProps) =>
 				props.isDropdown ? "default" : "pointer",

@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles"
+import { fade, makeStyles } from "@material-ui/core/styles"
 
 const useMembershipBenefitsStyles = makeStyles((theme) => ({
 	root: {
@@ -19,7 +19,7 @@ const useMembershipBenefitsStyles = makeStyles((theme) => ({
 		overflow: "hidden",
 		"&:hover": {
 			"& $icon": {
-				color: theme.palette.secondary.main,
+				color: fade(theme.palette.secondary.main, 0.8),
 			},
 		},
 	},
@@ -41,9 +41,8 @@ const useMembershipBenefitsStyles = makeStyles((theme) => ({
 		zIndex: 98,
 		top: theme.spacing(1.5),
 		right: theme.spacing(2.5),
-		color: theme.palette.primary.main,
+		color: fade(theme.palette.primary.main, 0.4),
 		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 3),
-		opacity: 0.4,
 		transition: theme.transitions.create("color"),
 	},
 }))

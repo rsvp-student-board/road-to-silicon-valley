@@ -52,31 +52,34 @@ const NavItem: React.FC<NavItemProps> = ({ navItem, activePath, onClick }) => {
 				</Link>
 			) : (
 				navItem.sublist && (
-					<div onClick={toggleSubMenuOpen} className={classes.container}>
-						<Typography className={classes.typography}>
-							{navItem.title} <GoChevronDown className={classes.dropdownIcon} />
-						</Typography>
-						<div className={classes.highlight} />
-						<div className={classes.sublist}>
-							{navItem.sublist.map((sublistItem) => (
-								<Link
-									href={sublistItem.path}
-									passHref
-									key={`nav-item-sublist-${sublistItem.title}`}
-								>
-									<MuiLink
-										onClick={onClick}
-										variant="body1"
-										className={clsx(
-											classes.sublistLink,
-											sublistItem.path === activePath &&
-												classes.activeSublistLink
-										)}
+					<div className={classes.dropdownItem}>
+						<div onClick={toggleSubMenuOpen} className={classes.container}>
+							<Typography className={classes.typography}>
+								{navItem.title}{" "}
+								<GoChevronDown className={classes.dropdownIcon} />
+							</Typography>
+							<div className={classes.highlight} />
+							<div className={classes.sublist}>
+								{navItem.sublist.map((sublistItem) => (
+									<Link
+										href={sublistItem.path}
+										passHref
+										key={`nav-item-sublist-${sublistItem.title}`}
 									>
-										{sublistItem.title}
-									</MuiLink>
-								</Link>
-							))}
+										<MuiLink
+											onClick={onClick}
+											variant="body1"
+											className={clsx(
+												classes.sublistLink,
+												sublistItem.path === activePath &&
+													classes.activeSublistLink
+											)}
+										>
+											{sublistItem.title}
+										</MuiLink>
+									</Link>
+								))}
+							</div>
 						</div>
 					</div>
 				)

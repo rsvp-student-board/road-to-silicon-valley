@@ -52,7 +52,7 @@ const useHeroStyles = makeStyles((theme) => ({
 		fontWeight: 500,
 		letterSpacing: 1,
 		lineHeight: 1,
-		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 4),
+		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 3.5),
 		[theme.breakpoints.up("md")]: {
 			fontSize: theme.typography.pxToRem(theme.typography.fontSize * 5.25),
 		},
@@ -65,7 +65,7 @@ const useHeroStyles = makeStyles((theme) => ({
 		fontWeight: 400,
 	},
 	description: {
-		marginTop: theme.spacing(3.5),
+		marginTop: theme.spacing(6),
 		maxWidth: 600,
 		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 1.25),
 	},

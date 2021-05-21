@@ -15,7 +15,7 @@ const Landing: React.FC<LandingProps> = ({ imgBase64, imgSrc }) => {
 	return (
 		<>
 			<Parallax
-				strength={400}
+				strength={200}
 				className={classes.root}
 				contentClassName={classes.content}
 			>

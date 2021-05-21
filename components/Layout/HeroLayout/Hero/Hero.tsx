@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({
 
 	return (
 		<Parallax
-			strength={400}
+			strength={200}
 			className={classes.root}
 			contentClassName={classes.content}
 		>
