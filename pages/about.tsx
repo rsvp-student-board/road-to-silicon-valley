@@ -1,34 +1,31 @@
-import { Mission } from "@/components/About"
+import { Mission, OfferList } from "@/components/About"
 import { HeroLayout } from "@/components/Layout"
 import { Content } from "@/components/Typography"
 import { WHAT_RSVP_OFFERS } from "@/content"
 import { Grid, Typography } from "@material-ui/core"
-import { getBase64 } from "@plaiceholder/base64"
-import { getImage } from "@plaiceholder/next"
-import { GetStaticProps } from "next"
 import { BlurredImgProps } from "./_app"
 
-export const getStaticProps: GetStaticProps = async () => {
-	const imageIds = ["hero.jpeg"]
-	const props: BlurredImgProps = {}
+// export const getStaticProps: GetStaticProps = async () => {
+// 	const imageIds = ["hero.jpeg"]
+// 	const props: BlurredImgProps = {}
 
-	for (const imageId of imageIds) {
-		const imgSrc = `/images/about/${imageId}`
-		const img = await getImage(imgSrc)
-		const imgBase64 = await getBase64(img)
-		props[imageId] = { imgBase64, imgSrc }
-	}
+// 	for (const imageId of imageIds) {
+// 		const imgSrc = `/images/about/${imageId}`
+// 		const img = await getImage(imgSrc)
+// 		const imgBase64 = await getBase64(img)
+// 		props[imageId] = { imgBase64, imgSrc }
+// 	}
 
-	return { props }
-}
+// 	return { props }
+// }
 
-const AboutPage: React.FC<BlurredImgProps> = (imgs) => {
+const AboutPage: React.FC<BlurredImgProps> = () => {
 	return (
 		<HeroLayout
 			seoTitle="About"
 			heroTitle="About RSVP"
-			imgBase64={imgs["hero.jpeg"].imgBase64}
-			imgSrc={imgs["hero.jpeg"].imgSrc}
+			imgBase64="/images/about/hero.jpeg"
+			imgSrc="/images/about/hero.jpeg"
 			imgPosition="center 65%"
 			content={{
 				description:
@@ -68,7 +65,7 @@ const AboutPage: React.FC<BlurredImgProps> = (imgs) => {
 					<Grid container spacing={3}>
 						{WHAT_RSVP_OFFERS.map((offer) => (
 							<Grid item xs={12} sm={6} key={`offer-list-${offer.title}`}>
-								{/* <OfferList offer={offer} /> */}
+								<OfferList offer={offer} />
 							</Grid>
 						))}
 					</Grid>
