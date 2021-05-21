@@ -1,4 +1,5 @@
 const path = require("path")
+require("sharp")
 
 module.exports = {
 	webpack: (config, { dev, isServer }) => {
