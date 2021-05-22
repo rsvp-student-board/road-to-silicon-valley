@@ -65,7 +65,7 @@ const useHeroStyles = makeStyles((theme) => ({
 		fontWeight: 400,
 	},
 	description: {
-		marginTop: theme.spacing(6),
+		marginTop: theme.spacing(5),
 		maxWidth: 600,
 		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 1.25),
 	},

@@ -1,4 +1,5 @@
 export * from "./about"
 export * from "./home"
 export * from "./interfaces"
+export * from "./involvement"
 export * from "./recruitment"

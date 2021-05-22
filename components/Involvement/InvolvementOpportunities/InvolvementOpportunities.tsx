@@ -1,9 +1,9 @@
+import { INVOLVEMENT_OPPORTUNITIES } from "@/content"
 import { Container } from "@material-ui/core"
 import Accordion from "@material-ui/core/Accordion"
 import AccordionDetails from "@material-ui/core/AccordionDetails"
 import AccordionSummary from "@material-ui/core/AccordionSummary"
 import Typography from "@material-ui/core/Typography"
-import { INVOLVEMENT_OPPORTUNITIES } from "content/about"
 import { useState } from "react"
 import { MdExpandMore } from "react-icons/md"
 import useInvolvementOpportunitiesStyles from "./InvolvementOpportunities.styles"
@@ -13,12 +13,10 @@ const InvolvementOpportunities: React.FC = () => {
 
 	const classes = useInvolvementOpportunitiesStyles()
 
-	const handleChange = (panel: number) => (
-		_event: React.ChangeEvent<{}>,
-		isExpanded: boolean
-	) => {
-		setExpanded(isExpanded ? panel : false)
-	}
+	const handleChange =
+		(panel: number) => (_event: React.ChangeEvent<{}>, isExpanded: boolean) => {
+			setExpanded(isExpanded ? panel : false)
+		}
 
 	return (
 		<Container maxWidth="sm" className={classes.root}>

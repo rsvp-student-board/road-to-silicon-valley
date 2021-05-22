@@ -123,30 +123,6 @@ const Introduction: React.FC<IntroductionProps> = ({ imgBase64s, imgSrcs }) => {
 					<Calendar />
 				</Grid>
 
-				{/* <Grid item xs={12}>
-					<Container maxWidth="sm">
-						<Grid container spacing={1}>
-							{DISCIPLINES.map((discipline, index) => (
-								<Grid
-									item
-									xs={index === Math.floor(DISCIPLINES.length / 2) ? 12 : 6}
-									className={classes.disciplineGridItem}
-									key={`discipline ${discipline.title}`}
-								>
-									<div className={classes.disciplineIcon}>
-										{discipline.icon}
-									</div>
-									<Typography
-										variant="body1"
-										className={classes.disciplineTitle}
-									>
-										{discipline.title}
-									</Typography>
-								</Grid>
-							))}
-						</Grid>
-					</Container>
-				</Grid> */}
 				<Grid item xs={12}>
 					<Box textAlign="center" width="100%">
 						<Button

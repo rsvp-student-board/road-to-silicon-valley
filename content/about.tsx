@@ -5,7 +5,7 @@ import {
 	HiOutlineLightBulb,
 } from "react-icons/hi"
 import { IoBusinessOutline } from "react-icons/io5"
-import { Discipline, InvolvementOpportunity, Offer } from "./interfaces"
+import { Discipline, Offer } from "./interfaces"
 
 export const WHAT_IS_RSVP = [
 	"The Road to Silicon V/Alley Program (RSVP) paves the way for students to become leaders in innovation (intrapreneurship) and entrepreneurship in a digital age. Rutgers Business School is working with university partners to be at the forefront of enhancing the educational opportunities for students across Rutgers University.",
@@ -88,34 +88,6 @@ export const WHAT_RSVP_OFFERS: Array<Offer> = [
 				title: "Access to investment opportunities",
 			},
 		],
-	},
-]
-
-export const INVOLVEMENT_OPPORTUNITIES: Array<InvolvementOpportunity> = [
-	{
-		title: "Mentoring RSVP Students",
-		description:
-			"Lend your experience by mentoring a student interested in tech and innovation — help them navigate course selections, career preparation, and internship opportunities.",
-	},
-	{
-		title: "Hosting Site Visits and Workshops",
-		description:
-			"Open the doors of your company to a group of RSVP students, sharing knowledge about your industry and allowing them to experience a day in the life of a professional innovator.",
-	},
-	{
-		title: "Providing Internships and Jobs",
-		description:
-			"Hire an RSVP student at your company, for a summer internship or a full-time job.",
-	},
-	{
-		title: "Investing in Student Ventures",
-		description:
-			"Want to partner directly with RU student entrepreneurs? Invest in a student-led start-up.",
-	},
-	{
-		title: "Joining the Road to Silicon V/Alley Board",
-		description:
-			"Ready for a leadership position? Join the RSVP board and open doors for innovators and create collaborative opportunities and partnerships for significant impact.",
 	},
 ]
 

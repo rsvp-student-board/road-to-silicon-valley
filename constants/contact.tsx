@@ -21,7 +21,9 @@ export const CONTACT_ITEMS: ContactItem[] = [
 	},
 	{
 		title: "Email",
-		url: "mailto:rsvpmarketingpr@gmail.com",
+		url: "mailto:rsvp.eboard@gmail.com",
 		icon: <AiOutlineMail />,
 	},
 ]
+
+export const EMAIL = "rsvp.eboard@gmail.com"

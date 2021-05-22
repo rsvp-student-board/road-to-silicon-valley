@@ -22,6 +22,12 @@ export interface Offer {
 	}[]
 }
 
+export interface InvolvementCategory {
+	title: string
+	icon: JSX.Element
+	description: string
+}
+
 export interface InvolvementOpportunity {
 	title: string
 	description: string
