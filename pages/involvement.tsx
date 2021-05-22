@@ -72,6 +72,11 @@ const InvolvementPage: React.FC<BlurredImgProps> = (imgs) => {
 					<div>
 						<InvolvementOpportunities />
 					</div>
+					<Typography variant="body1">
+						If you would like to learn more about how to get involved with the
+						Road to Silicon V/Alley Program, feel free to send us an email at (
+						<Hyperlink href={`mailto:${EMAIL}`}>{EMAIL}</Hyperlink>).
+					</Typography>
 				</Content>
 			</Grid>
 		</HeroLayout>
