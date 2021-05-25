@@ -11,8 +11,9 @@ import {
 } from "@material-ui/core"
 import type { calendar_v3 } from "googleapis"
 import { useState } from "react"
+import { AiOutlineInfoCircle } from "react-icons/ai"
 import { BsFillClockFill } from "react-icons/bs"
-import { MdClose, MdInfo } from "react-icons/md"
+import { MdClose } from "react-icons/md"
 import { RiMapPinFill } from "react-icons/ri"
 import useCalendarEventStyles from "./CalendarEvent.styles"
 
@@ -129,7 +130,7 @@ const CalendarEvent: React.FC<CalendarEventProps> = ({ event }) => {
 								<Grid container spacing={2}>
 									<Grid item xs={1}>
 										<Typography className={classes.infoIcon}>
-											<MdInfo />
+											<AiOutlineInfoCircle />
 										</Typography>
 									</Grid>
 									<Grid item xs={11}>

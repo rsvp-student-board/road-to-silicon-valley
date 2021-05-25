@@ -21,7 +21,7 @@ export const NAV_ITEMS: NavItem[] = [
 		title: "Students",
 		sublist: [
 			{
-				title: "Active Members",
+				title: "Active Cohort Members",
 				path: "/members",
 			},
 			{

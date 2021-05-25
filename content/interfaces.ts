@@ -38,3 +38,28 @@ export interface MembershipBenefit {
 	description: string
 	icon: JSX.Element
 }
+
+export interface Student {
+	sys: {
+		id: string
+	}
+	fullName: string
+	cohort?: number
+	graduationYear: number
+	majors: string[]
+	minors?: string[]
+	concentrations: string[]
+	email: string
+	linkedIn?: string
+	company?: string
+	role?: string
+	studentBoardPosition?: string
+	committeeMembership?: string
+	description?: string
+	alumnus?: boolean
+	headshot?: {
+		url: string
+		width: number
+		height: number
+	}
+}

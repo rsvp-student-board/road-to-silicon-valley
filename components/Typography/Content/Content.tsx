@@ -11,7 +11,12 @@ const Content: React.FC<ContentProps> = ({ children, header }) => {
 	const classes = useContentStyles()
 
 	const addMarginBottom = (child: ReactElement) => {
-		const className = clsx(child.props.className, classes.item)
+		const className = clsx(
+			child.props.className,
+			!child.props.className?.includes("header") &&
+				!child.props.className?.includes("no-margin") &&
+				classes.item
+		)
 
 		return cloneElement(child, { className })
 	}
