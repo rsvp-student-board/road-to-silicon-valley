@@ -12,11 +12,13 @@ import useStudentCardStyles from "./StudentCard.styles"
 
 interface StudentCardProps {
 	student: Student
+	showPosition?: boolean
 	alternateColor?: boolean
 }
 
 const StudentCard: React.FC<StudentCardProps> = ({
 	student,
+	showPosition,
 	alternateColor,
 }) => {
 	const classes = useStudentCardStyles({ alternateColor })
@@ -79,7 +81,7 @@ const StudentCard: React.FC<StudentCardProps> = ({
 					alignItems="center"
 					className={classes.linksContainer}
 				>
-					<Link href={`members/${student.sys.id}`} passHref>
+					<Link href={`members/${student.slug}`} passHref>
 						<IconButton className={classes.link}>
 							<AiOutlineInfoCircle />
 						</IconButton>
@@ -102,6 +104,11 @@ const StudentCard: React.FC<StudentCardProps> = ({
 			<Typography variant="body1" className={classes.name}>
 				{student.fullName}
 			</Typography>
+			{showPosition && (
+				<Typography variant="body1" className={classes.position}>
+					{student.studentBoardPosition || student.committeeMembership}
+				</Typography>
+			)}
 		</>
 	)
 }

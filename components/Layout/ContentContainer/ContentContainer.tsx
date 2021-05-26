@@ -30,7 +30,7 @@ const ContentContainer: React.FC<ContentContainerProps> = ({
 				maxWidth="lg"
 				className={clsx(classes.root, containerClassName)}
 			>
-				<Container maxWidth="md">
+				<Container maxWidth="md" className="content-container">
 					<Grid container spacing={isMediumScreen ? 5 : 4}>
 						{Children.map(children, (child) =>
 							addSectionComponent(child as ReactElement)

@@ -9,35 +9,23 @@ const graphQLClient = new GraphQLClient(endpoint, {
 	},
 })
 
-export const getStudents = async (): Promise<{
+export const getCohortMembers = async (): Promise<{
 	studentCollection: { items: Student[] }
 }> => {
 	const query = gql`
 		{
-			studentCollection {
+			studentCollection(
+				where: { OR: [{ alumnus: false }, { alumnus_exists: false }] }
+			) {
 				items {
-					sys {
-						id
-					}
 					fullName
 					cohort
-					graduationYear
-					majors
-					minors
-					concentrations
 					email
 					linkedIn
-					company
-					role
-					studentBoardPosition
-					committeeMembership
-					description
-					alumnus
 					headshot {
 						url
-						width
-						height
 					}
+					slug
 				}
 			}
 		}
@@ -47,13 +35,13 @@ export const getStudents = async (): Promise<{
 }
 
 export const getStudent = async (
-	id: string
+	slug: string
 ): Promise<{
 	studentCollection: { items: Student[] }
 }> => {
 	const query = gql`
 		query getStudent($slug: String!) {
-			studentCollection(where: { sys: { id: $slug } }) {
+			studentCollection(where: { slug: $slug }) {
 				items {
 					sys {
 						id
@@ -74,8 +62,6 @@ export const getStudent = async (
 					alumnus
 					headshot {
 						url
-						width
-						height
 					}
 				}
 			}
@@ -83,6 +69,86 @@ export const getStudent = async (
 	`
 
 	return graphQLClient.request(query, {
-		slug: id,
+		slug,
 	})
+}
+
+export const getAlumni = async (): Promise<{
+	studentCollection: { items: Student[] }
+}> => {
+	const query = gql`
+		{
+			studentCollection(where: { alumnus: true }) {
+				items {
+					fullName
+					cohort
+					graduationYear
+					majors
+					minors
+					concentrations
+					email
+					linkedIn
+					company
+					role
+					studentBoardPosition
+					committeeMembership
+					description
+					alumnus
+					headshot {
+						url
+					}
+				}
+			}
+		}
+	`
+
+	return graphQLClient.request(query)
+}
+
+export const getStudentBoard = async (): Promise<{
+	studentCollection: { items: Student[] }
+}> => {
+	const query = gql`
+		{
+			studentCollection(where: { studentBoardPosition_exists: true }) {
+				items {
+					fullName
+					cohort
+					studentBoardPosition
+					email
+					linkedIn
+					headshot {
+						url
+					}
+					slug
+				}
+			}
+		}
+	`
+
+	return graphQLClient.request(query)
+}
+
+export const getCommitteeMembers = async (): Promise<{
+	studentCollection: { items: Student[] }
+}> => {
+	const query = gql`
+		{
+			studentCollection(where: { committeeMembership_exists: true }) {
+				items {
+					fullName
+					cohort
+					committeeMembership
+					email
+					linkedIn
+					headshot {
+						url
+					}
+					slug
+				}
+			}
+		}
+	`
+
+	return graphQLClient.request(query)
 }

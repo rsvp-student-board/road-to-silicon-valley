@@ -2,7 +2,7 @@ import { HeroLayout } from "@/components/Layout"
 import StudentCard from "@/components/StudentCard"
 import { Content, Header } from "@/components/Typography"
 import { Student } from "@/content"
-import { getStudents } from "@/utils"
+import { getCohortMembers } from "@/utils"
 import { Box, Grid, Typography } from "@material-ui/core"
 import { getBase64 } from "@plaiceholder/base64"
 import { getImage } from "@plaiceholder/next"
@@ -26,10 +26,10 @@ export const getStaticProps: GetStaticProps = async () => {
 		imgs[imageId] = { imgBase64, imgSrc }
 	}
 
-	const students = await getStudents()
+	const cohortMembers = await getCohortMembers()
 
 	return {
-		props: { imgs, students: students.studentCollection.items },
+		props: { imgs, students: cohortMembers.studentCollection.items },
 		revalidate: 60,
 	}
 }
@@ -48,11 +48,6 @@ const MembersPage: React.FC<MembersPageProps> = ({ imgs, students }) => {
 				item
 			) => {
 				const cohort = item.cohort || -1
-				if (item.alumnus) {
-					return {
-						...result,
-					}
-				}
 				return {
 					...result,
 					[cohort]: [...(result[cohort] || []), item],
@@ -66,10 +61,6 @@ const MembersPage: React.FC<MembersPageProps> = ({ imgs, students }) => {
 			setCohorts(groupByCohort())
 		}
 	}, [students])
-
-	useEffect(() => {
-		console.log(cohorts)
-	}, [cohorts])
 
 	return (
 		<HeroLayout
@@ -130,7 +121,7 @@ const MembersPage: React.FC<MembersPageProps> = ({ imgs, students }) => {
 											xs={6}
 											sm={4}
 											md={3}
-											key={`student-${student.sys.id}`}
+											key={`student-${student.slug}`}
 										>
 											<StudentCard
 												student={student}

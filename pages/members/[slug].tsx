@@ -1,6 +1,6 @@
+import { StudentInfo } from "@/components/Members"
 import { Student } from "@/content"
-import { getStudent, getStudents } from "@/utils"
-import { Typography } from "@material-ui/core"
+import { getCohortMembers, getStudent } from "@/utils"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { NextSeo } from "next-seo"
 
@@ -9,19 +9,19 @@ interface MemberPageProps {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const students = await getStudents()
+	const cohortMembers = await getCohortMembers()
 
 	return {
-		paths: students.studentCollection.items.map((student) => ({
-			params: { slug: student.sys.id },
+		paths: cohortMembers.studentCollection.items.map((student) => ({
+			params: { slug: student.slug },
 		})),
 		fallback: false,
 	}
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	const id = ([] as string[]).concat(context.params?.slug || "")[0]
-	const students = await getStudent(id)
+	const slug = ([] as string[]).concat(context.params?.slug || "")[0]
+	const students = await getStudent(slug)
 
 	return {
 		props: { student: students.studentCollection.items[0] },
@@ -33,9 +33,7 @@ const MemberPage: React.FC<MemberPageProps> = ({ student }) => {
 	return (
 		<>
 			<NextSeo title={student.fullName} />
-			<div style={{ paddingTop: 500 }}>
-				<Typography variant="body1">{student.fullName}</Typography>
-			</div>
+			<StudentInfo student={student} />
 		</>
 	)
 }

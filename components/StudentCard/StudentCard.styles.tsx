@@ -28,6 +28,13 @@ const useStudentCardStyles = makeStyles((theme) => ({
 		fontWeight: 500,
 		fontSize: theme.typography.pxToRem(theme.typography.fontSize * 1.25),
 	},
+	position: {
+		textAlign: "center",
+		fontWeight: 300,
+		textTransform: "uppercase",
+		letterSpacing: 1,
+		fontSize: theme.typography.pxToRem(theme.typography.fontSize),
+	},
 	linksContainer: {
 		opacity: 0,
 		background: (props: StudentCardStylesProps) =>

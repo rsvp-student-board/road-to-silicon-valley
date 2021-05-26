@@ -42,10 +42,12 @@ const FeaturedBox: React.FC<FeaturedBoxProps> = ({
 				className={classes.blurredImage}
 			/>
 			<Image
-				layout="fill"
 				src={imgSrc}
+				alt={`RSVP – ${title}`}
+				layout="fill"
 				objectFit="cover"
-				quality={30}
+				quality={50}
+				priority
 				className={classes.image}
 			/>
 			<Box

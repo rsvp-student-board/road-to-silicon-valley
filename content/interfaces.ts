@@ -40,9 +40,6 @@ export interface MembershipBenefit {
 }
 
 export interface Student {
-	sys: {
-		id: string
-	}
 	fullName: string
 	cohort?: number
 	graduationYear: number
@@ -59,7 +56,6 @@ export interface Student {
 	alumnus?: boolean
 	headshot?: {
 		url: string
-		width: number
-		height: number
 	}
+	slug: string
 }
