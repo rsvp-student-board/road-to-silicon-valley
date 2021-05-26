@@ -33,7 +33,7 @@ const StudentInfo: React.FC<StudentInfoProps> = ({ student }) => {
 	return (
 		<>
 			<Container maxWidth="lg" style={{ padding: 0, position: "relative" }}>
-				<Box width="100%" height={300} className={classes.gradient} />
+				<Box width="100%" className={classes.gradient} />
 				{/* <Box
 					width="100%"
 					height="100%"

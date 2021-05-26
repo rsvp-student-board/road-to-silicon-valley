@@ -2,10 +2,14 @@ import { fade, makeStyles } from "@material-ui/core/styles"
 
 const useStudentInfoStyles = makeStyles((theme) => ({
 	gradient: {
+		height: 300,
 		backgroundColor: theme.palette.primary.main,
 		background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
 		backgroundSize: "400% 400%",
 		animation: `$gradientShift 45s ${theme.transitions.easing.easeInOut} infinite`,
+		[theme.breakpoints.up("md")]: {
+			height: 250,
+		},
 	},
 	"@keyframes gradientShift": {
 		"0%": { backgroundPosition: "0% 50%" },
@@ -27,9 +31,12 @@ const useStudentInfoStyles = makeStyles((theme) => ({
 			[theme.breakpoints.up("sm")]: {
 				marginTop: "-25vw",
 			},
-			[theme.breakpoints.up("md")]: {
+			[theme.breakpoints.up("sm")]: {
 				marginTop: 0,
 			},
+		},
+		[theme.breakpoints.up("md")]: {
+			minHeight: "calc(100vh - 82px - 250px)",
 		},
 	},
 	imgContainer: {
@@ -71,6 +78,7 @@ const useStudentInfoStyles = makeStyles((theme) => ({
 		paddingBottom: theme.spacing(1.5),
 		borderBottom: `1px solid ${theme.palette.grey[400]}`,
 		textAlign: "center",
+		marginTop: theme.spacing(-2),
 		[theme.breakpoints.up("md")]: {
 			borderBottom: "none",
 			paddingBottom: 0,
