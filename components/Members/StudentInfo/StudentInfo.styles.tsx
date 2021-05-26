@@ -112,14 +112,6 @@ const useStudentInfoStyles = makeStyles((theme) => ({
 		marginBottom: theme.spacing(-0.75),
 	},
 	infoContainer: {
-		"&&": {
-			paddingLeft: theme.spacing(4),
-			paddingRight: theme.spacing(4),
-			[theme.breakpoints.up("sm")]: {
-				paddingLeft: theme.spacing(2),
-				paddingRight: theme.spacing(2),
-			},
-		},
 		[theme.breakpoints.up("md")]: {
 			marginTop: theme.spacing(13),
 		},
