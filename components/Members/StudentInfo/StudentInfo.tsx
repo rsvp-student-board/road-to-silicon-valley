@@ -92,7 +92,7 @@ const StudentInfo: React.FC<StudentInfoProps> = ({ student }) => {
 						alignItems="flex-end"
 						className={classes.nameGrid}
 					>
-						<Grid item xs={12} md="auto">
+						<Grid item xs={10} sm="auto">
 							<Typography variant="h1" className={classes.name}>
 								{fullName}
 							</Typography>
@@ -117,7 +117,7 @@ const StudentInfo: React.FC<StudentInfoProps> = ({ student }) => {
 								Class of <span>{graduationYear}</span>
 							</Typography>
 						</Grid>
-						<Grid item xs={12} md="auto">
+						<Grid item xs={2} sm="auto">
 							<IconButton
 								href={`mailto:${email}`}
 								color="primary"
@@ -227,9 +227,16 @@ const StudentInfo: React.FC<StudentInfoProps> = ({ student }) => {
 						</Grid>
 					</Grid>
 				</Grid>
-				<Grid item xs={12} sm={6} md={7} className={classes.infoContainer}>
-					<Typography variant="body1">{description}</Typography>
-				</Grid>
+				{description ? (
+					<Grid item xs={12} sm={6} md={7} className={classes.infoContainer}>
+						<Typography className={classes.infoDescriptor}>About</Typography>
+						<Typography variant="body1" className={classes.description}>
+							{description}
+						</Typography>
+					</Grid>
+				) : (
+					<> </>
+				)}
 			</ContentContainer>
 		</>
 	)

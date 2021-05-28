@@ -11,15 +11,15 @@ export const INVOLVEMENT_CATEGORIES: InvolvementCategory[] = [
 		description: "Connections with innovative public & private companies",
 	},
 	{
+		title: "Human Capital",
+		icon: <IoPeopleSharp />,
+		description: "Mentorship from alumni, industry, & faculty experts",
+	},
+	{
 		title: "Intellectual Capital",
 		icon: <HiLightBulb />,
 		description:
 			"Multidisciplinary curriculum & experiential education in leading sectors",
-	},
-	{
-		title: "Human Capital",
-		icon: <IoPeopleSharp />,
-		description: "Mentorship from alumni, industry, & faculty experts",
 	},
 	{
 		title: "Financial Capital",
